@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>Questions, part 1</title>
+        <author>
+        	<name>Mihai</name>
+        	<surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+            <tag>Task_1</tag>
+        </tags>
+    </head>
+
+    <body>
+        <question>
+            <body>
+                1.1	What is the "X" in 
+                XML and what is its 
+                significance? 
+                Select one response and write the letter
+                here 
+            </body>
+            <selected_answer>b</selected_answer>
+            <options>
+                <option>Extended</option>
+                <option>Extensible</option>
+                <option>Extreme</option>
+                <option>Extendable</option>
+            </options>
+            <after>
+                The "X" is significant because:
+            </after>
+            <answer>
+                XML was designed to be extensible, which allows it to be used for a
+                variety of applications. Many such XML-based formats have been
+                defined, such as XML-RPC, SVG, XHTML, RSS  this proves XMLs
+                usefulness, and would not be possible if not for XML being
+                extensible.
+            </answer>
+        </question>
+    
+        <question>
+            <body>
+                1.2	What is a markup language? Select one response and write the letter
+                here 
+            </body>
+            <selected_answer>c</selected_answer>
+            <options>
+                <option>A system of symbols to support the transmission of Morse code.</option>
+                <option>A system to display website standards to which a website conforms,</option>
+                <option>A system of embedded codes to make an electronic document display on a web page as required</option>
+                <option>A system to only prepare documents for publication</option>
+            </options>
+            <after>
+                What is a mark-up language and how is it used?
+            </after>
+            <answer>
+                A mark-up language is used to give a special meaning to portions of
+                text - this is accomplished by marking up the text with special
+                tags, which have a meaning that is determined by the particular
+                format of the XML file. Each type of XML file can have it's own
+                tags, which are meaningless to other applications, or can have a
+                different meaning.
+            </answer>
+        </question>
+    
+        <question>
+            <body>
+                1.3	What does SGML stand for? Select one response and write the letter
+                here
+            </body>
+            <selected_answer>a</selected_answer>
+        
+            <options>
+                <option>Standard Generalized Markup Language</option>
+                <option>Structured Generalized Markup Language</option>
+                <option>School of Global Management and Learning</option>
+                <option>Simplified Generic Machine Language</option>
+            </options>
+        
+            <after>
+                What is the significance of SGML ?
+            </after>
+        
+            <answer>
+                SGML is important because most of the technologies that make
+                the internet possible are based on it - such as (X)HTML and
+                XML. The reason these languages were derived from SGML is that,
+                due to it's complexity, writing an SGML parser is very
+                difficlut. Furthermore, the expressive power SGML provides is
+                not needed in many of the envisioned applications of markup
+                languages. Therefore, subsets of SGML were chosen for
+                particular applications.  
+            </answer>
+        </question>
+    
+        <question>
+            <body>
+                1.4	What is the relationship between SGML and XML? Select one response and write the letter
+                here 
+            </body>
+            <selected_answer>c</selected_answer>
+            <options>
+                <option>SGML is based on XML</option>
+                <option>SGML and XML are the basis for HTML</option>
+                <option>SGML is a slimmed-down, streamlined version of XML</option>
+                <option>XML is a slimmed-down, streamlined version of SGML</option>
+            </options>
+        
+            <after>
+                Describe and explain the relationship between SGML and XML
+            </after>
+        
+            <answer>
+                XML is based on SGML, but only has a subset of it's features. The creators
+                of XML acknowledged the value of SGML, but felt is too 'heavy' for many
+                purposes. Therefore, XML was developed - a light markup language, that can
+                be extended to accommodate numerous applications.
+            </answer>
+        </question>
+    
+    
+        <question>
+            <body>
+                1.5	What is the relationship between SGML and HTML? Select one response and write the letter
+                here 
+            </body>
+            <selected_answer>a</selected_answer>
+            <options>
+                <option>HTML is a mark-up language derived from SGML</option>
+                <option>SGML is a mark-up language derived from HTML</option>
+                <option>Both are derived from XML</option>
+                <option>Both are derived from AJAX</option>
+            </options>
+        
+            <after>
+                Give further  explanation  of the relationship between SGML and XML
+            </after>
+        
+            <answer>
+                HTML was derived from SGML, but most HTML documents do not validate as SGML
+                documents. Since it was introduced, HTML accumulated many features that
+                would not be practical to exclude for backward-compatibility purposes,
+                which prevented HTML from being an SGML application - until HTML 4.0 -
+                which fully conforms to the SGML standard.
+            </answer>
+        
+        </question>
+    
+        <question>
+            <body>
+                1.6	Which of the following statements are true? Select one response and write the letter
+                here
+            </body>
+            <selected_answer>c</selected_answer>
+            <options>
+                <option>Special-purpose packages have been derived from HTML</option>
+                <option>HTML is an application derived from XML</option>
+                <option>Special-purpose markup languages have been derived from XML</option>
+                <option>XML is used to create HTML</option>
+            </options>
+        
+            <after>
+                Give examples to explain your answer
+            </after>
+        
+            <answer>
+                XML, being inherently extensible, has indeed been used as a basis for
+                numerous other types of documents.  One of the most obvious examples of
+                special-purpose XML-derived markup languages is XHTML - which is a
+                re-formulation of HTML 4 document types as applications of XML 1.0.  SVG,
+                Scalable Vector Graphics, is a format used to represent images using vector
+                graphics, which is also an application of XML. XML is also used,
+                internally, for recent Microsoft document types such as docx.
+            </answer>
+        </question>
+    </body>
+
+</blog_post>

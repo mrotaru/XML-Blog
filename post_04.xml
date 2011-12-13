@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title></title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+            <tag></tag>
+        </tags>
+    </head>
+
+    <body>
+        
+    </body>
+
+</blog_post>        

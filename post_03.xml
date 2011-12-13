@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>Questions, part 3</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Nov 2011</date>
+        <tags>
+            <tag>XML</tag>
+        </tags>
+    </head>
+
+    <body>
+        <question>
+            <body>
+                1.11 What is XUL? Select one response and write the letter here
+            </body>
+            <selectedanswer>b</selectedanswer>
+            <options>
+                <option>Extensible Unseen Markup Language</option>
+                <option>XML User Interface Language</option>
+                <option>Extensible Universal Language</option>
+                <option>Extreme UML</option>
+            </options>
+
+            <after>
+                Why is XUL needed?
+            </after>
+
+            <answer>
+                Much like XIML, XUL is an XML-based user interface markup language, but is
+                not standardized, and does not inter-operate with implementations other
+                than those based on Mozilla's Gecko layout engine. 
+            </answer>
+        </question>
+
+        <question>
+            <body>
+                1.12 What is XSL? Select one response and write the letter here
+            </body>
+            <selectedanswer>d</selectedanswer>
+            <options>
+                <option>As a standards language</option>
+                <option>An alternative to XML</option>
+                <option>Extensible Universal Language</option>
+                <option>As a stylesheet language</option>
+            </options>
+            
+            <after>
+                Why is XSL needed?
+            </after>
+            
+            <answer>
+                XSL stylesheets are similar to CSS stylesheets - but instead of defining
+                the look of a HTML document, they dictate how XML documents should be
+                displayed. XSL also includes a transformation language, XSLT, initially
+                intended for styling operations, but currently used for general purpose
+                XML processing - for example, generating HTML web pages from XML files.
+                XSL is compatible with CSS, but uses a different syntax.
+            </answer>
+        </question>
+
+        <question>
+            <body>
+                1.13 Below is some XML. The last line is missing. What should it be?
+                Select one response and write the letter here
+
+                <code>
+                &lt;?xml version="1.0"?&gt;
+                &lt;note&gt;
+                    &lt;to&gt;Class&lt;/to&gt;
+                    &lt;from&gt;Ray&lt;/from&gt;
+                    &lt;heading&gt;Reminder&lt;/heading&gt;
+                    &lt;body&gt;Don't forget to complete your Blog!&lt;/body&gt;
+                </code>
+
+            </body>
+            <selectedanswer>b</selectedanswer>
+            <options>
+                <option>&lt;end&gt;</option>
+                <option>&lt;/note&gt;</option>
+                <option>&lt;note&gt;</option>
+                <option>&lt;note/&gt;</option>
+            </options>
+            
+            <after>
+                Justify your answer 
+            </after>
+            
+            <answer>
+                An XML document should be, at the very least, well-formed. To ensure
+                well-formedness, the document should have a single root element. In
+                this case, the root element would be <var>note</var>, but it is not
+                closed; and XML mandates all tags to be closed.
+            </answer>
+        </question>
+
+        <question>
+            <body>
+                1.14 Below is some XML. What is the missing line? Select one response and
+                write the letter here
+
+                <code>
+                &lt;?xml version="1.0" encoding='UTF-8'?&gt;
+                &lt;painting&gt;
+                  &lt;img src="madonna.jpg" alt='Foligno Madonna, by Raphael'/&gt;
+                  &lt;caption&gt;This is Raphael's "Foligno" Madonna, painted in
+                  &lt;date&gt;1511&lt;/date&gt;-&lt;date&gt;1512&lt;/date&gt; 
+                &lt;/painting&gt;
+                </code>
+
+            </body>
+            <selectedanswer>d</selectedanswer>
+            <options>
+                <option>&lt;Header&gt;</option>
+                <option>&lt;Body&gt;</option>
+                <option>&lt;painting&gt;</option>
+                <option>&lt;/caption&gt;</option>
+            </options>
+            
+            <after>
+                Justify your answer 
+            </after>
+            
+            <answer>
+                The <var>caption</var> tag was opened, but not closed, which is not allowed in XML.
+            </answer>
+        </question>
+
+    </body>
+
+</blog_post>

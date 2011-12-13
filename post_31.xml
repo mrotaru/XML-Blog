@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>Is the semantic web a failure?</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>10 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+            <tag>semantic_web</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            Although counter-intuitive at first sight, the concept of a failed
+            semantic web takes shape at a closer examination. But first, a
+            definition of the semantic web is in order; as it is accepted now,
+            the semantic web is the next evolutionary step from 'Web 1.0', in
+            which web pages generally lack semantic meaning and web pages are
+            written in HTML which mixes presentation with content.
+        </p>
+
+        <p>
+            The advent of technologies such as XML and the XML version of HTML, XHTML were
+            promising, since the line between content and presentation was clearly drawn.
+            However, the fact that the semantic web was possible and desirable did not
+            necessarily translate into it becoming a reality - there were still billions of web pages
+            written in older versions of HTML, which prevented browsers from adopting 
+            a tougher stance towards badly written HTML code.
+        </p>
+
+        <p>
+            This pressure to assure backwards compatibility resulted in the continuing
+            proliferation of web pages which do not respect the tenets of the semantic web,
+            since there is little pressure to do so - the browsers are still forgiving.
+            Even with pages which have the XHTML DTD, browsers will be less strict since
+            many of them are not well-formed XML documents.
+        </p>
+
+        <p>
+            In conclusion, the semantic web remains an idea, a concept, rather than
+            an accomplished fact. The realities of the web make it nearly impossible to
+            achieve in practice, but nevertheless a useful concept which encourages
+            best practices.
+        </p>
+        
+    </body>
+
+</blog_post>        

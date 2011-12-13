@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>XIML</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>10 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+            <tag>XIML</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            XIML ( eXtensible Interface Markup Language ) is an XML-based
+            markup language which aims to provide a standard way of
+            representing <em>interaction data</em> - data pertaining to the
+            user interface. XIML allows for the representation and manipulation
+            of such data, which defines and relates all the relevant elements of
+            a user interface.
+        </p>
+
+        <p>
+            XIML aims to prvide <em>comprehensive lifecycle support</em> - in
+            other words, the same XIML file could be used during the design of
+            the user interface, as well as at runtime and during the evaluation phases.
+            Tools used for GUI ( Graphical User Interface ) design could output
+            XIML files, which will be used by the application at runtime. The same
+            XIML files could then be used for usability engineering.
+        </p>
+
+        <p>
+            Designing a language such as XIML is also complicated by the fact
+            that it needs to be able to represent both <em>abstract, and concrete</em>
+            elements of a user interface. One of the abstract elements consists
+            of the context in which the respective interaction takes place, and
+            the particular task that is accomplished.
+            Concrete elements are much easier to envision, consisting of the various
+            controls or widgets which are to be displayed by the application.
+        </p>
+
+        <p>
+            XIML allows for the definition of <em>relations</em> between the various
+            elements which can be represented. For example, XIML could be used to
+            state that "Type A objects will be displayed with element E", where E
+            is a presentational element, while A is a domain-component.
+        </p>
+        
+    </body>
+
+</blog_post>        

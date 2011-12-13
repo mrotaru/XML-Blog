@@ -1,0 +1,23 @@
+body
+{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #342E3D;
+}
+
+#container
+{
+    background-color: #DBB0B5;
+    border: 3px solid black;
+}
+
+#content
+{
+    margin-left: 9em;
+    background-color: #F2F2F2;
+    font: 18px Georgia;
+    padding: 20px;
+/*    height: 400px;*/
+    overflow: auto;
+}

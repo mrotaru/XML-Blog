@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>XUL</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>10 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+            <tag>XUL</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            XUL - XML User Interface Language, pronounced "Zool" is a framework
+            employed by Mozilla in it's applications, such as the Firefox web browser.
+            It is based on XML while also making use of CSS and HTML features.
+        </p>
+
+        <p>
+            XUL is used in the context of Mozilla applications, which consist of components
+            like buttons, labels and text boxes - "widgets". The rendering and handling of
+            user actions within the widget are under the control of the widget itself, while
+            the layout of the widgets and their interactions is specified in the XUL document.
+        </p>
+
+        <p>
+            XUL makes use of numerous other technologies, such as JavaScript - which can be
+            used to program individual widgets, XBL - the eXtensible Bindings Language - used
+            to define "bindings" for widgets, which also allows for event handlers, and adding
+            new interface elements and properties.
+        </p>
+
+        <p>
+            Another technology which can be employed in the context of XUL is XPConnect and
+            XPCOM. XPCOM ( Cross Platform Component Object Model ) is a framework for writing
+            cross-platform, modular software components in native languages, such as C or C++.
+            XPCOM components can be used form within C, C++, JavaScript, Python, Java and Perl.
+            XPConnect enables such XPCOM objects to be accessed from JavaScript.
+        </p>
+
+        <p>
+            It is similar, in some aspects, to XIML since it also aims to provide a way of
+            describing user interfaces, and is based on XML. But there are many differences,
+            one of the most significant ones being that XIML has a broader scope, aiming for
+            a generalization and standardization of UI elements and interactions, while XUL
+            has a more practical perspective, providing a working solution at the expense of
+            standardization, and having a narrower scope.
+        </p>
+        
+    </body>
+
+</blog_post>        
