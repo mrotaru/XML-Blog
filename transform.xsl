@@ -97,6 +97,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <!--  P                                       -->
     <!--==========================================-->
     <xsl:template match="p">
+        <p>
             <xsl:for-each select="node()">
 
                 <xsl:choose>
@@ -114,6 +115,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 </xsl:choose>
 
             </xsl:for-each>
+        </p>
     </xsl:template>
 
     <!--==========================================-->
