@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>Example of XML errors</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            Have a look at the XML document below. Identify all the syntax errors.
+        </p>
+        
+<code>
+&lt;?xml version= "1.0" ?&gt;
+&lt;!DOCTYPE countryCollection SYSTEM "countryList.dtd"&gt;
+&lt;CountryList&gt;
+&lt;Nations TotalNations ="3"/&gt;
+&lt;!--Data from CIA --Year Book --&gt;
+	&lt;Country CountryCode="1"&gt; 
+		&lt;OfficialName&gt;United States of America&lt;/officialName&gt;
+		&lt;Label&gt;Common Names:&lt;/label&gt;		
+		&lt;CommonName&gt;United States&lt;/commonName&gt;
+		&lt;CommonName&gt;U.S.&lt;/commonName&gt;
+		&lt;Label&gt;Capital:&lt;/capital&gt;		
+		&lt;Capital cityNum="1"&gt;Washington, D.C. &lt;/label&gt;
+		&lt;2ndCity cityNum="2"&gt;New York &lt;/2ndCity&gt;	
+		&lt;Label&gt;Major Cities:&lt;/label&gt;	
+		&lt;MajorCity cityNum="3"&gt;Los Angeles &lt;/majorCity&gt;
+		&lt;MajorCity cityNum="4"&gt;Chicago &lt;/majorCity&gt;		
+		&lt;MajorCity cityNum="5'&gt;Dallas &lt;/majorCity&gt;		
+		&lt;Label&gt;Bordering Bodies of Water:&lt;/label&gt;				
+		&lt;BorderingBodyOfWater&gt; Atlantic Ocean &lt;/borderingBodyOfWater&gt;
+		&lt;BorderingBodyOfWater&gt; Pacific Ocean &lt;/borderingBodyOfWater&gt;		
+		&lt;BorderingBodyOfWater&gt; Gulf of Mexico &lt;/borderingBodyOfWater&gt;	
+		&lt;Label&gt;Bordering Countries:&lt;/label&gt;			
+		&lt;BorderingCountry CountryCode="1"&gt; Canada &lt;/borderingCountry&gt;				
+		&lt;BorderingCountry CountryCode ="52"&gt; Mexico &lt;/borderingCountry&gt;
+&lt;/country&gt;
+	&lt;Country CountryCode="81"&gt;
+		&lt;OfficialName&gt; Japan &lt;/officialName&gt;
+		&lt;Label&gt;Common Names:&lt;/label&gt;				
+		&lt;CommonName&gt; Japan &lt;/commonName&gt;
+		&lt;Label&gt;Capital:&lt;/label&gt;		
+		&lt;Capital&gt;Tokyo&lt;/capital cityNum="1"&gt;
+		&lt;2ndCity cityNum="2"&gt;Osaka &lt;/2ndCity&gt;
+		&lt;Label&gt;Major Cities:&lt;/label&gt;				
+		&lt;MajorCity cityNum="3"&gt;Nagoya &lt;/majorCity&gt;
+		&lt;MajorCity cityNum="4"&gt;Osaka &lt;/majorCity&gt;		
+		&lt;MajorCity cityNum="5'&gt;Kobe &lt;/majorCity&gt;		
+		&lt;Label&gt;Bordering Bodies of Water:&lt;/label&gt;
+		&lt;BorderingBodyOfWater&gt;Sea of Japan &lt;/borderingBodyOfWater&gt;
+		&lt;BorderingBodyOfWater&gt;Pacific Ocean &lt;/borderingBodyOfWater&gt;		
+	&lt;/country&gt;
+	&lt;Country CountryCode="254"&gt;
+		&lt;OfficialName&gt; Republic of Kenya &lt;/officialName&gt;
+		&lt;Label&gt;Common Names:&lt;/label&gt;				
+		&lt;CommonName&gt; Kenya &lt;/commonName&gt;
+		&lt;Label&gt;Capital:&lt;/label&gt;		
+		&lt;Capital cityNum='1'&gt;Nairobi &lt;/capital&gt;
+		&lt;2ndCity cityNum='2'&gt;Mombasa&lt;/2ndCity&gt;
+		&lt;Label&gt;Major Cities:&lt;/label&gt;				
+		&lt;MajorCity cityNum='3'&gt;Mombasa &lt;/majorCity&gt;
+		&lt;MajorCity cityNum='4'&gt;Lamu &lt;/majorCity&gt;
+		&lt;MajorCity cityNum='5'&gt;Malindi &lt;/majorCity&gt;		
+		&lt;MajorCity cityNum='6' cityNum='7'&gt;Kisumu-Kericho &lt;/majorCity&gt;	
+		&lt;Label&gt;Bordering Bodies of Water:&lt;/label&gt;
+		&lt;BorderingBodyOfWater &lt;!--Also Lake Victoria --&gt; &gt; Indian Ocean &lt;/borderingBodyOfWater&gt;
+	&lt;/country&gt;
+</code>
+<p>
+<ul>
+	<li>- wrong type of quotes used throughout the document; ASCII-type quotes should be used ( U+0022 and U+0027 ), instead of the directional quotation marks.</li>
+	<li>- The file "countryList.dtd" should be present in the same folder as the XML document, otherwise it cannot be a valid document</li>
+	<li>- The word following DOCTYPE must be the same as the root element</li>
+	<li>- one type of opening quote, different type used for closing on L17, L36</li>
+	<li>- a sequence of more than one dash characters is not allowed within comments ( L5 )</li>
+	<li>- On L7, the element "OfficialName" is terminated in the wrong casing, as "officialName"; it should be terminated as "lt;/OfficialNamegt;" - uppercase 'O', same as the starting tag.</li>
+	<li>- On L11, the lt;Labelgt; element is opened, but for closing the lt;/capitalgt; tag is used; the closing tag should be lt;/labelgt;</li>
+	<li>- On L12, the lt;Capitalgt; tag should have a matching lt;/Capitalgt; closing tag, instead of lt;/Labelgt;</li>
+	<li>- On L13, the element name "2ndCity" is invalid; element names must not begin with numbers (http://www.w3.org/TR/REC-xml/#NT-NameStartChar )</li>
+	<li>- Almost all elements in the document have incorrect ending tags - with the first letter in lowercase; the element name should be exactly the same, in both the starting and the ending tags.</li>
+	<li>- On L31, the ending tag of the "Capital" element has an attribute - which is illegal. The attribute should be moved in the starting tag.</li>
+	<li>- On L52, the "cityNum" attribute is listed twice for the "MajorCity" element; this is illegal, each attribute is allowed to appear only once ( http://www.w3.org/TR/REC-xml/#sec-starttags ).</li>
+	<li>- On L54, a comment appears inside markup; this is illegal (http://www.w3.org/TR/REC-xml/#sec-comments ), it should be moved outside the tag, into the element's contents.</li>
+	<li>- The document should contain one root element, which must have starting and closing tags - so the "CountryList" element must be closed with it's respective closing tag.</li>
+</ul>
+</p>
+
+<p>
+After correcting the errors, the following well-formed document results:
+</p>
+
+<code>
+&lt;?xml version= "1.0" ?&gt;
+&lt;!--&lt;!DOCTYPE countryCollection SYSTEM "countryList.dtd"&gt;--&gt;
+&lt;CountryList&gt;
+&lt;Nations TotalNations ="3"/&gt;
+&lt;!--Data from CIA -Year Book --&gt;
+&lt;Country CountryCode="1"&gt; 
+    &lt;OfficialName&gt;United States of America&lt;/OfficialName&gt;
+    &lt;Label&gt;Common Names:&lt;/Label&gt;		
+    &lt;CommonName&gt;United States&lt;/CommonName&gt;
+    &lt;CommonName&gt;U.S.&lt;/CommonName&gt;
+    &lt;Label&gt;Capital:&lt;/Label&gt;		
+    &lt;Capital cityNum="1"&gt;Washington, D.C. &lt;/Capital&gt;
+    &lt;SecondCity cityNum="2"&gt;New York &lt;/SecondCity&gt;	
+    &lt;Label&gt;Major Cities:&lt;/Label&gt;	
+    &lt;MajorCity cityNum="3"&gt;Los Angeles &lt;/MajorCity&gt;
+    &lt;MajorCity cityNum="4"&gt;Chicago &lt;/MajorCity&gt;		
+    &lt;MajorCity cityNum="5"&gt;Dallas &lt;/MajorCity&gt;		
+    &lt;Label&gt;Bordering Bodies of Water:&lt;/Label&gt;				
+    &lt;BorderingBodyOfWater&gt; Atlantic Ocean &lt;/BorderingBodyOfWater&gt;
+    &lt;BorderingBodyOfWater&gt; Pacific Ocean &lt;/BorderingBodyOfWater&gt;		
+    &lt;BorderingBodyOfWater&gt; Gulf of Mexico &lt;/BorderingBodyOfWater&gt;	
+    &lt;Label&gt;Bordering Countries:&lt;/Label&gt;			
+    &lt;BorderingCountry CountryCode="1"&gt; Canada &lt;/BorderingCountry&gt;				
+    &lt;BorderingCountry CountryCode ="52"&gt; Mexico &lt;/BorderingCountry&gt;
+&lt;/Country&gt;
+&lt;Country CountryCode="81"&gt;
+    &lt;OfficialName&gt; Japan &lt;/OfficialName&gt;
+    &lt;Label&gt;Common Names:&lt;/Label&gt;				
+    &lt;CommonName&gt; Japan &lt;/CommonName&gt;
+    &lt;Label&gt;Capital:&lt;/Label&gt;		
+    &lt;Capital cityNum="1"&gt;Tokyo&lt;/Capital&gt;
+    &lt;SecondCity cityNum="2"&gt;Osaka &lt;/SecondCity&gt;
+    &lt;Label&gt;Major Cities:&lt;/Label&gt;				
+    &lt;MajorCity cityNum="3"&gt;Nagoya &lt;/MajorCity&gt;
+    &lt;MajorCity cityNum="4"&gt;Osaka &lt;/MajorCity&gt;		
+    &lt;MajorCity cityNum="5"&gt;Kobe &lt;/MajorCity&gt;		
+    &lt;Label&gt;Bordering Bodies of Water:&lt;/Label&gt;
+    &lt;BorderingBodyOfWater&gt;Sea of Japan &lt;/BorderingBodyOfWater&gt;
+    &lt;BorderingBodyOfWater&gt;Pacific Ocean &lt;/BorderingBodyOfWater&gt;		
+&lt;/Country&gt;
+&lt;Country CountryCode="254"&gt;
+    &lt;OfficialName&gt; Republic of Kenya &lt;/OfficialName&gt;
+    &lt;Label&gt;Common Names:&lt;/Label&gt;				
+    &lt;CommonName&gt; Kenya &lt;/CommonName&gt;
+    &lt;Label&gt;Capital:&lt;/Label&gt;		
+    &lt;Capital cityNum='1'&gt;Nairobi &lt;/Capital&gt;
+    &lt;SecondCity cityNum='2'&gt;Mombasa&lt;/SecondCity&gt;
+    &lt;Label&gt;Major Cities:&lt;/Label&gt;				
+    &lt;MajorCity cityNum='3'&gt;Mombasa &lt;/MajorCity&gt;
+    &lt;MajorCity cityNum='4'&gt;Lamu &lt;/MajorCity&gt;
+    &lt;MajorCity cityNum='5'&gt;Malindi &lt;/MajorCity&gt;		
+    &lt;MajorCity cityNum='6'&gt;Kisumu-Kericho &lt;/MajorCity&gt;	
+    &lt;Label&gt;Bordering Bodies of Water:&lt;/Label&gt;
+    &lt;BorderingBodyOfWater &gt; &lt;!--Also Lake Victoria --&gt;Indian Ocean&lt;/BorderingBodyOfWater&gt; 
+&lt;/Country&gt;	
+&lt;/CountryList&gt;
+</code>
+
+</body>
+
+</blog_post>        

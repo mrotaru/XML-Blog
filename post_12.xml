@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>What are the relative merits of CSS and XSL?</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>CSS</tag>
+            <tag>XSL</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            Certainly, there is overlap between CSS and XSL functionality, since both these
+            technologies are often employed to describe how (X)HTML is to be displayed.
+            Both CSS and XSL can also be used to style XML documents in general - for
+            example, SVG images. 
+        </p>
+        <p>
+            But they also differ in some aspects, one of the salient differences stems from
+            their intended scope - CSS was designed from the outset as styling language to
+            be used for HTML documents, while XSL was designed to style and transform XML
+            documents.
+        </p>
+        <p>
+            This resulted in the two technologies having significant differences: 
+            <ul>
+            	<li>- CSS is terser, while XSL is verbose.</li>
+            	<li>- CSS keeps contents separated from presentation.</li>
+            	<li>- XLS is more intuitive - becoming proficient at styling and layout with CSS is not easy and takes a long time, and debugging layout issues is notoriously difficult for users with limited experience. XLS provides a more direct and explicit route to the desired outcome.</li>
+            	<li>- XLS has, arguably, better browser support - XSL version 1.0, which contains enough functionality to ensure an adequate level of customization, is supported by all major browsers</li>
+            	<li>- XSL has less cross-browser issues </li>
+            </ul>
+        </p>
+
+        </body>
+
+    </blog_post>        

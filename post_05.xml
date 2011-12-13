@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>What is XML validation and what is the output?</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+            <tag>validation</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+        XML validation is the process by which a document is checked to ensure the
+        document is a well-formed XML document, and also that it's structure
+        corresponds to it's declared Document Type Definition ( DTD ) or XML Schema. If
+        a document is not well-formed, it cannot be valid.
+        </p>
+
+        <p>
+        An XML parser can be either validating or non-validating, depending on it's
+        ability to validate an XML document against a DTD or an XML Schema. A
+        non-validating XML processor will only check for correct syntax, and interrupt
+        parsing at the first encountered error. A validating parser will first perform
+        the well-formedness test, and then proceed ( if the document is a well-formed
+        XML document ) to check whether the contents match the description in the
+        DTD/XMS. Unlike the well-formedness test, a validating parser is free to choose
+        the course of action when validity errors are encountered; the parser can
+        simply stop parsing and exit, or it could notify the user of the error and then
+        continue parsing.
+        </p>
+
+        <p>
+        The output of an XML validator depends on the implementation; the XML standard
+        allows for some flexibility in this regard. It would most likely consist of a
+        list of errors encountered, such as the w3schools validator
+        (http://www.w3schools.com/xml/xml_validator.asp ). 
+        </p>
+        
+    </body>
+
+</blog_post>        

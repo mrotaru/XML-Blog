@@ -18,7 +18,7 @@
                 1.7	Which of the following statements DOES NOT apply to XML?  Select one response and write the letter
                 here
             </body>
-            <selected_answer>b</selected_answer>
+            <selectedanswer>b</selectedanswer>
             <options>
                 <option>XML is a set of rules for encoding documents electronically</option>
                 <option>XML is a predecessor of SGML</option>
@@ -41,7 +41,7 @@
                 1.8 Which of the following statements DOES NOT apply to XML?  Select one response and write the letter
                 here
             </body>
-            <selected_answer>d</selected_answer>
+            <selectedanswer>d</selectedanswer>
             <options>
                 <option>XML underpins the www</option>
                 <option>XML underpins office apps</option>
@@ -68,7 +68,7 @@
                 1.9 What does XIML stand for? Select one response and write the letter
                 here
             </body>
-            <selected_answer>c</selected_answer>
+            <selectedanswer>c</selectedanswer>
             <options>
                 <option>Extensible Intelligent Markup Language</option>
                 <option>Extended Invisible Markup Language </option>
@@ -93,7 +93,7 @@
                 1.10 What is the purpose of XIML? Select one response and write the letter
                 here
             </body>
-            <selected_answer>a</selected_answer>
+            <selectedanswer>a</selectedanswer>
             <options>
                 <option>A Universal Language for User Interfaces</option>
                 <option>A Markup Language Intelligent Applications</option>

@@ -22,7 +22,7 @@
                 Select one response and write the letter
                 here 
             </body>
-            <selected_answer>b</selected_answer>
+            <selectedanswer>b</selectedanswer>
             <options>
                 <option>Extended</option>
                 <option>Extensible</option>
@@ -46,7 +46,7 @@
                 1.2	What is a markup language? Select one response and write the letter
                 here 
             </body>
-            <selected_answer>c</selected_answer>
+            <selectedanswer>c</selectedanswer>
             <options>
                 <option>A system of symbols to support the transmission of Morse code.</option>
                 <option>A system to display website standards to which a website conforms,</option>
@@ -71,7 +71,7 @@
                 1.3	What does SGML stand for? Select one response and write the letter
                 here
             </body>
-            <selected_answer>a</selected_answer>
+            <selectedanswer>a</selectedanswer>
         
             <options>
                 <option>Standard Generalized Markup Language</option>
@@ -101,7 +101,7 @@
                 1.4	What is the relationship between SGML and XML? Select one response and write the letter
                 here 
             </body>
-            <selected_answer>c</selected_answer>
+            <selectedanswer>c</selectedanswer>
             <options>
                 <option>SGML is based on XML</option>
                 <option>SGML and XML are the basis for HTML</option>
@@ -127,7 +127,7 @@
                 1.5	What is the relationship between SGML and HTML? Select one response and write the letter
                 here 
             </body>
-            <selected_answer>a</selected_answer>
+            <selectedanswer>a</selectedanswer>
             <options>
                 <option>HTML is a mark-up language derived from SGML</option>
                 <option>SGML is a mark-up language derived from HTML</option>
@@ -154,7 +154,7 @@
                 1.6	Which of the following statements are true? Select one response and write the letter
                 here
             </body>
-            <selected_answer>c</selected_answer>
+            <selectedanswer>c</selectedanswer>
             <options>
                 <option>Special-purpose packages have been derived from HTML</option>
                 <option>HTML is an application derived from XML</option>

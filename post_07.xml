@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>What is the importance of the first line of an XML document? </title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            The first line of an XML document must not be blank, since the document will
+            fail the well-formedness test, and cannot be a valid XML document. As described
+            in the standard, an XML document should begin with an XML declaration which
+            specifies the version of XML being used.
+            (http://www.w3.org/TR/2008/REC-xml-20081126/#sec-prolog-dtd )
+        </p>
+        <p>
+            However, a document not declaring the XML version on the first line can still
+            pass the well-formedness test, but it cannot be a valid document. If the first
+            line is blank, it cannot be well-formed, nor valid.
+        </p>
+        <p>
+            For example, the following is a well-formed XML document, but not valid:
+        </p>
+<code>
+&lt;?xml version="1.0"?&gt;
+&lt;foo&gt;This is the content of the foo element&lt;/foo&gt; 
+</code>
+        <p>
+            This can be tested in an XML validator; for example, the one found at
+            http://www.validome.org/xml/validate/: As visible from above, the document is
+            not valid because nowhere is the &lt;foo&gt; element declared. However, if we only
+            test for well-formedness:
+        </p>
+        <p>
+            So summarize, the first line of an XML file should be used to specify the
+            version of XML used; but it can also be any element, as long as it is not
+            blank. However, a document without the declaration of the version of XML used
+            cannot be valid - it can be well-formed, assuming XML syntax is respected
+            throughout the file.
+        </p>
+
+    </body>
+
+</blog_post>        

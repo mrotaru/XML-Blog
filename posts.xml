@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<posts>
+    <title>Blog posts</title>
+    <post filename="post_01.xml" />
+    <post filename="post_02.xml" />
+    <post filename="post_03.xml" />
+    <post filename="post_04.xml" />
+    <post filename="post_05.xml" />
+    <post filename="post_06.xml" />
+    <post filename="post_07.xml" />
+    <post filename="post_08.xml" />
+    <post filename="post_09.xml" />
+    <post filename="post_10.xml" />
+    <post filename="post_11.xml" />
+    <post filename="post_12.xml" />
+    <post filename="post_13.xml" />
+    <post filename="post_14.xml" />
+    <post filename="post_15.xml" />
+    <post filename="post_29.xml" />
+    <post filename="post_30.xml" />
+    <post filename="post_31.xml" />
+    <post filename="post_32.xml" />
+    <post filename="post_33.xml" />
+</posts>

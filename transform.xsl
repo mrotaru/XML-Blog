@@ -120,12 +120,17 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
                 <xsl:choose>
                     
-                    <!-- 'em' tags-->
+                    <!-- 'em' tags -->
                     <xsl:when test="name() = 'em'">
                         <em><xsl:value-of select="."/></em>
                     </xsl:when>
+
+                    <!--  list -->
+                    <xsl:when test="name() = 'ul'">
+                        <xsl:copy-of select="." />
+                    </xsl:when>
                     
-                    <!--  text-->
+                    <!--  text -->
                     <xsl:otherwise>
                         <xsl:value-of select="."/>
                     </xsl:otherwise>
