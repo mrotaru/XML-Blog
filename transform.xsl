@@ -56,8 +56,13 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <!--==========================================-->
     <xsl:template match="question">
         <p>
-            <xsl:value-of select="body"/>
+            <xsl:value-of select="body/text()"/>
+            <xsl:text> [ </xsl:text>
+            <xsl:value-of select="selectedanswer"/>
+            <xsl:text> ] </xsl:text>
         </p>
+        <xsl:apply-templates select="body/code"/>
+        <xsl:apply-templates select="options"/>
         <p>
             <xsl:value-of select="answer"/>
         </p>
@@ -65,10 +70,33 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     </xsl:template> 
 
     <!--==========================================-->
+    <!--  code                                    -->
+    <!--==========================================-->
+    <xsl:template match="body/code">
+        <pre>
+            <xsl:value-of select="."/>
+        </pre>
+    </xsl:template>
+
+    <!--==========================================-->
+    <!--  options                                 -->
+    <!--==========================================-->
+    <xsl:template match="options">
+        <ul>
+            <xsl:for-each select="./option">
+                <li>
+                    <xsl:number format="a. " />
+                    <xsl:value-of select="."/>
+                </li>
+            </xsl:for-each>
+        </ul>
+    </xsl:template>    
+
+
+    <!--==========================================-->
     <!--  P                                       -->
     <!--==========================================-->
     <xsl:template match="p">
-        <p>
             <xsl:for-each select="node()">
 
                 <xsl:choose>
@@ -86,7 +114,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 </xsl:choose>
 
             </xsl:for-each>
-        </p>
     </xsl:template>
 
     <!--==========================================-->

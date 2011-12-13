@@ -67,14 +67,14 @@
                 1.13 Below is some XML. The last line is missing. What should it be?
                 Select one response and write the letter here
 
-                <code>
-                &lt;?xml version="1.0"?&gt;
-                &lt;note&gt;
-                    &lt;to&gt;Class&lt;/to&gt;
-                    &lt;from&gt;Ray&lt;/from&gt;
-                    &lt;heading&gt;Reminder&lt;/heading&gt;
-                    &lt;body&gt;Don't forget to complete your Blog!&lt;/body&gt;
-                </code>
+<code>
+&lt;?xml version="1.0"?&gt;
+&lt;note&gt;
+    &lt;to&gt;Class&lt;/to&gt;
+    &lt;from&gt;Ray&lt;/from&gt;
+    &lt;heading&gt;Reminder&lt;/heading&gt;
+    &lt;body&gt;Don't forget to complete your Blog!&lt;/body&gt;
+</code>
 
             </body>
             <selectedanswer>b</selectedanswer>
@@ -102,14 +102,14 @@
                 1.14 Below is some XML. What is the missing line? Select one response and
                 write the letter here
 
-                <code>
-                &lt;?xml version="1.0" encoding='UTF-8'?&gt;
-                &lt;painting&gt;
-                  &lt;img src="madonna.jpg" alt='Foligno Madonna, by Raphael'/&gt;
-                  &lt;caption&gt;This is Raphael's "Foligno" Madonna, painted in
-                  &lt;date&gt;1511&lt;/date&gt;-&lt;date&gt;1512&lt;/date&gt; 
-                &lt;/painting&gt;
-                </code>
+<code>
+&lt;?xml version="1.0" encoding='UTF-8'?&gt;
+&lt;painting&gt;
+  &lt;img src="madonna.jpg" alt='Foligno Madonna, by Raphael'/&gt;
+  &lt;caption&gt;This is Raphael's "Foligno" Madonna, painted in
+  &lt;date&gt;1511&lt;/date&gt;-&lt;date&gt;1512&lt;/date&gt; 
+&lt;/painting&gt;
+</code>
 
             </body>
             <selectedanswer>d</selectedanswer>
