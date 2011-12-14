@@ -4,6 +4,7 @@ import sys
 import glob
 from subprocess import *
 from shutil import copy
+from shutil import copytree
 
 top = '.'
 out = 'build'
@@ -24,5 +25,6 @@ def build( ctx ):
            )
 
     copy( 'style.css', out )
+    copytree( 'img/', out + '/img' )
 
 # vim:filetype=python

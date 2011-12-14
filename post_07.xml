@@ -34,7 +34,13 @@
 </code>
         <p>
             This can be tested in an XML validator; for example, the one found at
-            http://www.validome.org/xml/validate/: As visible from above, the document is
+            http://www.validome.org/xml/validate/: 
+        </p>
+
+        <img src="img/invalid-document.JPG"/>
+            
+        <p>
+            As visible from above, the document is
             not valid because nowhere is the &lt;foo&gt; element declared. However, if we only
             test for well-formedness:
         </p>

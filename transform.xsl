@@ -44,16 +44,24 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                         <xsl:value-of select="../head/title"/>
                     </h1>
                     <hr/>
+                    
                     <xsl:for-each select="node()">
+                        
                         <xsl:choose>
                             <xsl:when test="name()='code'">
                                 <pre>
                                     <xsl:value-of select="."/>
                                 </pre>
                             </xsl:when>
+                            
+                            <xsl:when test="name()='img'">
+                                <xsl:copy-of select="." />
+                            </xsl:when>
+                            
                             <xsl:when test="name()='question'">
                                 <xsl:apply-templates select="."/>
                             </xsl:when>
+                            
                             <xsl:when test="name()='p'">
                                 <xsl:apply-templates select="."/>
                             </xsl:when>
@@ -62,8 +70,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                 <xsl:value-of select="."/>
                             </xsl:otherwise>
                         </xsl:choose>
+
                     </xsl:for-each>
-<!--                    <xsl:apply-templates select="./code"/>-->
+
                 </div>
             </div>
         </body>
