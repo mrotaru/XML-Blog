@@ -58,6 +58,10 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                 <xsl:copy-of select="." />
                             </xsl:when>
                             
+                            <xsl:when test="name()='ul'">
+                                <xsl:copy-of select="." />
+                            </xsl:when>
+                            
                             <xsl:when test="name()='question'">
                                 <xsl:apply-templates select="."/>
                             </xsl:when>
