@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>Transforming XML with XSLT</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+            <tag>XSLT</tag>
+        </tags>
+    </head>
+
+    <body>
+
+        <p>
+            The XSLT transformation pipeline involves four elements: the source XML
+            document(s) with the XSLT stylesheets, an XSLT processor ( template processing
+            engine ), and the resulting document(s).
+        </p>
+
+        <p>
+            The output format of an XSLT transformation ( actually, in the context of XSLT
+            a transformation doesn't actually transform the source XML document - but
+            instead uses it as input for creating other documents ) can range from PDF
+            files to plain text files; this is due to XSLT's powerful templating mechanism
+            and versatile XSL Formatting Objects.
+        </p>
+
+        <p>
+            Here's an XSL template which will create an XML file based on movies.xml, and
+            add a column which will represent the 'value' of the movie - it's rating
+            divided by it's price:
+        </p>
+
+<code>
+01 &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+02 &lt;xsl:stylesheet version="1.0"
+03 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+04 
+05 &lt;xsl:output method="xml" version="1.0" indent="yes"/&gt;
+06     &lt;xsl:template match="/"&gt;
+07         &lt;movies&gt;
+08         &lt;xsl:for-each select="movies/movie"&gt;
+09             &lt;movie&gt;
+00             &lt;xsl:copy-of select="./*"/&gt;
+11             &lt;value&gt;&lt;xsl:value-of select="rating div price"/&gt;&lt;/value&gt;
+12             &lt;/movie&gt;
+13         &lt;/xsl:for-each&gt;
+14         &lt;/movies&gt;
+15     &lt;/xsl:template&gt;
+16 &lt;/xsl:stylesheet&gt;
+</code>
+        <p>
+            Notes
+        </p>
+
+        <ul>
+            <li> this solution is not ideal, since some elements are hard-coded ( <var>movies</var> and <var>movie</var> ); these should be somehow deduced</li>
+            <li> <var>xsl:for-each</var> is used on L08 to select each <var>movie</var> node in turn ( in the order they appear in the original XML file - 'document order' )</li>
+            <li> <var>xsl:copy-of</var> is used on L10 to create a copies of all the child nodes of the current node. This statement will copy the <var>title</var>, <var>year</var>, etc elements for each <var>movie</var> element.</li>
+            <li> on L11, the <var>value</var> element is created. <var>xsl:value-of</var> is used to insert the value resulting from dividing the value of the <var>rating</var> element with the value of the <var>price</var> element of the current node.</li>
+        </ul>
+
+        <p>
+            Microsoft's msxsl tool (http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=21714 ) can be used to transform the original XML file into a new one, with the added &lt;value&gt; element:
+        </p>
+
+<code>
+msxsl movies.xml transform.xsl -o new_movies.xml
+</code>
+
+        <p>
+            Sorting is accomplished by using the xsl:sort element (
+            http://www.w3.org/TR/xslt#sorting ). xsl:sort can only appear as a
+            child of an xsl:apply-templates or an xsl:for-each element. To sort
+            the list of movies by the name of the title, we can simply add a
+            line after L08 in the previous XSLT stylesheet:
+        </p>
+
+<code>9         &lt;xsl:sort select="title"&gt;</code>
+
+        <p>
+            The resulting XML document will have it' elements sorted corresponding to the
+            alphabetical order of their 'title' elements. So, 'Apocalypto' will appear the
+            first, and 'Year One' as the last one.
+        </p>
+
+        <p>
+            XSLT offers much more powerful features then what was used in this example; one
+            stylesheet can contain multiple templates, and each template can be recursive.
+            XSLT also includes support for regular expressions and math ( as shown in the
+            example ). But if one finds XSLT's features are not sufficient, then XSLT has
+            an extension mechanism, which allows the language to be extended and new
+            features added to it.
+        </p>
+
+    </body>
+
+</blog_post>        
