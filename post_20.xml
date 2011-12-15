@@ -8,8 +8,8 @@
         </author>
         <date>1 Dec 2011</date>
         <tags>
-            <tag>XML</tag>
-            <tag></tag>
+            <tag>XSL</tag>
+            <tag>XSLT</tag>
         </tags>
     </head>
 
@@ -105,15 +105,16 @@
         </p>
         
         <p>
-            Another important XSL element, the xsl:value-of is used on lines
-            23-25; it relies on the concept of the "current element". In the
-            context of a for-each, this means that each element matching
-            for-each's XPath ( in this case, "movies/movie" ) will become the
-            "current element", in sequence. We have five movie elements in our
-            XML file, so each of these will become, in turn, the current
-            element. xsl:value-of will extract the value of certain child
-            elements - title, year and rating, and place these values instead
-            of itself.
+            Another important XSL element, the <var>xsl:value-of</var> is used
+            on lines 23-25; it relies on the concept of the "current element".
+            In the context of a <var>for-each</var>, this means that each
+            element matching <var>for-each</var>'s XPath ( in this case,
+            "movies/movie" ) will become the "current element", in sequence. We
+            have five movie elements in our XML file, so each of these will
+            become, in turn, the current element. <var>xsl:value-of</var> will
+            extract the value of certain child elements - <var>title</var>,
+            <var>year</var> and <var>rating</var>, and place these values
+            instead of itself.
         </p>
     
         <p>
