@@ -50,7 +50,7 @@ XMLString::release(&amp;m_name);
         <p>
             This assumes that we have defined a class named <var>foobar_sax_handler</var>, which
             inherits from <var>HandlerBase</var> and has a <var>startElement</var> method. We can set this class
-            to handle XML events with <var>the</var> setDocumentHandler method of the <var>SaxParser</var> class.
+            to handle XML events with the <var>setDocumentHandler</var> method of the <var>SaxParser</var> class.
             Our customized parser can then be invoked using the <var>parse( xml_file )</var> method of
             <var>the</var> SaxParser class, where xml_file represents the name of an XML file.
         </p>
