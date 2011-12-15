@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>Styling XML with CSS</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+            <tag>CSS</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            XML can be styled using CSS in a similar way to (X)HTML; in fact, the same CSS
+            file could be used by both XML and XHTML files. In this post, I will
+            demonstrate, using the XML file ( Pastebin link ) created in the previous post,
+            how to add CSS styling to an XML document. This blog post is based on the short
+            tutorial in section 2.2 of the CSS2.1 W3C Recommendation (
+            http://www.w3.org/TR/CSS2/intro.html#xml-tutorial ).
+        </p>
+        <p>
+            Before telling the XML file about the CSS, obviously the CSS file needs to be
+            created. I wanted to display the movies described in the XML file as a table,
+            with a gray background, a serif font, and green background for the table
+            headers. I ended up creating this short CSS file:
+        </p>
+
+<code>
+01 body
+02 {
+03     font: 12px Georgia; 
+04 }
+05 
+06 table
+07 {
+08     border-width: 1px;
+09     border-style: outset;
+10     background-color: lightgray;
+11 }
+12 
+13 th
+14 {
+15     background-color: #9acd32; 
+16 }
+</code>
+
+        <p>
+            Then, I simply added a line to the XML file:
+        </p>
+<code>2 &lt;?xml-stylesheet type="text/css" href="style.css"?&gt;</code>
+
+        <p>
+            Not a very smart approach, as I soon realized. Instead of rendering a lovely
+            table, the browser simply printed all the information about the movies, in a
+            single row. Which makes perfect sense; the CSS states that table headers should
+            have a green background. But how is the browser supposed to know which part of
+            the XML file should be the headers ? Or where is the table ? All it sees is a
+            well-formed XML file.
+        </p>
+        <p>
+            After massaging the CSS file further - while not touching the XML, in keeping
+            with the 'separate data from style' principle - I managed to get to something
+            resembling a table:
+        </p>
+
+<code>
+01 movies
+02 {
+03     font: 12px Georgia; 
+04     margin: 3px;
+05     width: 260px;
+06     border-width: 1px;
+07     border-style: outset;
+08     background-color: lightgray;
+09 }
+10 
+11 title  { background-color: lightcyan; }
+12 
+13 movie  { display: block; background-color: honeydew }
+14 
+15 title  { display: inline-block; width: 100px; border-right: 2px solid gray; }
+16 rating { display: inline-block; width: 50px;  border-right: 1px solid gray; }
+17 price  { display: inline-block; width: 50px;  border-right: 1px solid gray; }
+18 year   { display: inline-block; width: 40px; }
+</code>
+
+        <p>
+            How the XML was rendered by Firefox 8.0:
+        </p>
+
+        <img src="img/xml-table-with-css.JPG"/> 
+
+        <p>
+            Looks like a table, sure, but my dreams of green table header backgrounds were
+            shattered; it cannot be accomplished without modifying the XML file. And I
+            really don't want to do that - because then I would be using the XML file as
+            (X)HTML. Obviously, XHTML is XML by definition; but it's not wrong - in fact,
+            it is required - for XHTML to have tags like 'body', 'table', 'td', 'tr', etc.
+        </p>
+
+        <p>
+            XML, on the other hand, I intend to use it for it's intended purpose - storing
+            data in a future-proof way. What if I later decide to write another parser that
+            would use my XML files with data about movies ? Had I decided to change the XML
+            to accommodate CSS styling, my parser would have to look for and parse elements
+            such as 'body', 'h1', etc - and I would much rather have to deal with 'movie'
+            elements, which have the 'title', 'year', etc elements. In other words, the
+            semantics of the XML document would be preserved, without being contaminated
+            with presentational tags - or simply tags that don't make sense in the context
+            of the data which is stored.
+        </p>
+
+        <p>
+            I think this highlights very well the problems with styling XML with CSS -
+            while it can work, the desired effects might be difficult to achieve without
+            contaminating the XML document with additional data. This is not desirable; the
+            presentational document should accommodate the data, not the other way around.
+            While attempting this, the CSS file might end up bloated, and using unintuitive
+            work-arounds.
+        </p>
+
+        <p>
+            Other drawbacks of CSS stem from it's origin as purely a styling language - it
+            cannot perform any kind of computations. If I wanted my table to list the price
+            with the VAT included, it would not be possible. It is also impossible to sort,
+            or otherwise change the order in which elements appear.
+        </p>
+
+        <p>
+            However, styling XML documents with CSS might work very well for simpler
+            document types, which do not require the control that my example did. For
+            example, if the document only contains a few textual elements, then basic
+            presentational properties can be set easily - font, colors, etc.
+        </p>
+
+        <p>
+            But probably the most enticing feature of CSS over the alternative ( XSL ) is
+            the fact that it leverages knowledge of a widespread, almost ubiquitous
+            technology, since CSS has been used extensively for decades. It has a very
+            large user base, and these programmers would be able to style XML documents
+            using CSS with little learning required. XSL, on the other hand, can be quite
+            daunting to learn.
+        </p>
+        <p>
+
+            Ultimately, I think a decision should be taken on a per-case basis. In simple
+            cases, CSS works just fine; but when XML documents have a more complex
+            structure, the power of XSL should probably be invoked instead.
+        </p>
+
+        </body>
+
+    </blog_post>        
