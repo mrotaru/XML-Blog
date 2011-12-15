@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>Scalable Vector Graphics</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>SVG</tag>
+        </tags>
+    </head>
+
+    <body>
+
+        <p>
+            Scalable Vector Graphics ( SVG ) relies on text for describing an image. It
+            also supports the inclusion of raster data, however the mainstay of SVG is
+            textual description of graphic data. For example, the following SVG document
+            contains a red circle with a black outline:
+        </p>
+
+<code>
+&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+&lt;svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="100"
+   height="100"
+   id="svg2"&gt;
+  &lt;g
+     transform="translate(0,-952.36218)"
+     id="layer1"&gt;
+    &lt;path
+       d="m 90,50 a 40,40 0 1 1 -80,0 40,40 0 1 1 80,0 z"
+       transform="translate(0,952.36218)"
+       id="path2987"
+       style="fill:#ff0000;
+              fill-rule:evenodd;
+              stroke:#000000;
+              stroke-width:1px;
+              stroke-linecap:butt;
+              stroke-linejoin:miter;
+              stroke-opacity:1" 
+    /&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;
+</code>
+
+        <p>
+            As it is obvious from the document above, SVG is an application of XML - valid
+            SVG documents are also validate as XML. It also showcases how graphical data is
+            stored inside the SVG file - as XML elements, with graphical properties
+            described via attributes. The circle is represented by the path element - the
+            'd' element is actually short for 'Path Data', and describes it's shape. (
+            http://www.w3.org/TR/SVG11/paths.html#PathData ). Other properties of the
+            circle, such as it's fill colour and stroke width/colour are described via
+            attributes, as visible in the above example.
+        </p>
+
+        <p>
+            The SVG specification has multiple profiles; for example, the SVG Mobile
+            Recommendation ( http://www.w3.org/TR/SVGMobile/ ) defines the SVG Tiny and SVG
+            Basic mobile profiles. SVG Tiny is targeted at highly restricted mobile
+            devices, while SVG Basic is meant to be suitable for higher level mobile
+            devices.
+        </p>
+
+        <p>
+            One of the major issues concerning SVG is a reduced browser adoption rate.
+            Although the most recent versions of all major browsers have at least some
+            level of support for SVG images, some older, but still widely-used versions do
+            not support SVG; Internet Explorer fully supports the SVG Basic specification
+            only since version 9, released on March 14th 2011.
+        </p>
+        
+    </body>
+
+</blog_post>        
