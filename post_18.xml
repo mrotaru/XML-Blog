@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>Namespaces in XML</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+            <tag>namespaces</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            Namespaces, a familiar concept to C++ and Java programmers, have a similar role
+            in XML - to prevent name clashes. The problem of name clashes has the potential
+            to be more acute with XML due to it's versatility and flexibility. XML has a
+            wider and more difficult to anticipate application domain, which makes
+            namespaces a very important component to ensure a way of mitigating potential
+            name conflicts.
+        </p>
+
+        <p>
+            For example, a file containing information about a module taught at a
+            university might have the following structure:
+        </p>
+
+<code>
+1 &lt;?xml version="1.0"?&gt;
+2 &lt;module&gt;
+3     &lt;ID&gt;CMT3315&lt;/ID&gt;
+4     &lt;tutor&gt;Ray Adams&lt;/tutor&gt;
+5 &lt;/module&gt;
+</code>
+
+        <p>
+            And another file could contain information about a modules in a software
+            system:
+        </p>
+
+<code>
+1 &lt;?xml version="1.0"?&gt;
+2 &lt;module&gt;
+3     &lt;name&gt;Graphical User Interface&lt;/name&gt;
+4     &lt;priority&gt;high&lt;/priority&gt;
+5 &lt;/module&gt;
+</code>
+
+        <p>
+            These documents could be included in the same XML document, via external
+            entities - which would lead to two elements having the same name, but at the
+            same time being completely unrelated. The name of XML elements is described as
+            the element's 'type' in the XML standard
+            (http://www.w3.org/TR/REC-xml/#sec-starttags ), and all elements at the same
+            hierarchical level are likely to be assumed as belonging to the same type.
+        </p>
+
+        <p>
+            Namespaces provide a way of differentiating between elements with the same
+            name, but which are unrelated. The document containing both the above elements
+            would end up looking like this: 
+        </p>
+
+<code>
+01 &lt;?xml version="1.0"?&gt;
+02 &lt;root xmlns:t="teaching" xmlns:s="software_systems"&gt;
+03     &lt;t:module&gt;
+04         &lt;ID&gt;CMT3315&lt;/ID&gt;
+05         &lt;tutor&gt;Ray Adams&lt;/tutor&gt;
+06     &lt;/t:module&gt;
+07     &lt;s:module&gt;
+08         &lt;name&gt;Graphical User Interface&lt;/name&gt;
+09         &lt;priority&gt;high&lt;/priority&gt;
+10     &lt;/s:module&gt;
+11 &lt;/root&gt;
+</code>
+
+        <p>
+            This is a well-formed document, and there are no ambiguities since the two
+            different types of module elements are placed in different namespaces,
+            therefore avoiding name conflicts.
+        </p>
+
+    </body>
+
+</blog_post>        
