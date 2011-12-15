@@ -32,10 +32,10 @@
         </p>
         <p>
             The hierarchical structure of XML can be used to convey basic relationships,
-            such as one-to-one and one-to-many; for example, a document called ‘Module’ can
-            contain one or more ‘Tutor’ elements. This can be thought of as expressing
+            such as one-to-one and one-to-many; for example, a document called "Modules" can
+            contain one or more "Tutor" elements. This can be thought of as expressing
             either an one-to-one relationship ( if the module only has one tutor ), or as
-            one-to-many, if the module contains multiple ‘Tutor’ elements.
+            one-to-many, if the module contains multiple "Tutor" elements.
         </p>
 
     </body>
