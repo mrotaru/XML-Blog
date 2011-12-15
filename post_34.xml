@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>Is AJAX both a success and a failure?</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>14 Dec 2011</date>
+        <tags>
+            <tag>AJAX</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            Since it's emergence as a mainstream technology, AJAX has proven it's
+            usfulness. AJAX technologies are now employed by companies such as Microsoft
+            and Google, and are used by millions of web pages.
+        </p>
+
+        <p>
+            AJAX does, however have drawbacks which take away from it's shine. One of the
+            main concerns with AJAX technologies is with it's impact on <em>usability</em>
+            - certain screen readers and other accessiblity devices might not respond well
+            to dynamically updated web pages.
+        </p>
+
+        <p>
+            Important issues emerge <em>when a fast internet connection is not
+                available</em>. This can lead to websites being very difficult to use,
+            because AJAX is often used for functionality which requires responsiveness -
+            such as responding to the keys the user types in a search box, by updating a
+            list of matching items. On a slow internet connection, this might lead to
+            serious usability issues.
+        </p>
+
+        <p>
+            Another problem can arise due to the fact that <em>AJAX relies on
+                JavaScript</em>. But many users don't like JavaScript, and all modern
+            browsers provide some mechanism of preventing JavaScript code from executing.
+            If the user has JavaScript disabled, the website will not be dynamically
+            updated. Although improbable, it is also possible that some users visit the
+            web page with browsers which do not support JavaScript - in which case, again,
+            dynamic content will not be updated.
+        </p>
+
+        <p>
+            On the server side, employign AJAX technologies can lead to <em>very high
+                number of requests</em> to serve, which might be difficult to cope for the
+            servers. But companies usually take this into account, and purchase hardware
+            which can cope with the increased load; this is rarely an issue.
+        </p>
+        
+    </body>
+
+</blog_post>        
