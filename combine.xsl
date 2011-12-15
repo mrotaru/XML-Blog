@@ -7,7 +7,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 <xsl:template match="/">
     <html>
-        <title><xsl:value-of select="/report/title"/></title>
+        <title><xsl:value-of select="/posts/title"/></title>
         <xsl:for-each select="/posts/post">
             <xsl:apply-templates
                 select="document(@filename)/blog_post"/>

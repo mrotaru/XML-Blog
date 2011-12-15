@@ -138,6 +138,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                         <em><xsl:value-of select="."/></em>
                     </xsl:when>
 
+                    <!-- 'var' tags -->
+                    <xsl:when test="name() = 'var'">
+                        <var><xsl:value-of select="."/></var>
+                    </xsl:when>
+
                     <!--  list -->
                     <xsl:when test="name() = 'ul'">
                         <xsl:copy-of select="." />
