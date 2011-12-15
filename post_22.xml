@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>Styling XML with XSL</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+            <tag>XSL</tag>
+        </tags>
+    </head>
+
+    <body>
+
+        <p>
+            This blog post will describe the process of employing XSLT stylesheets for
+            styling an XML document. It is very similar to using CSS - the stylesheet must
+            be created, and the XML document should be told about the stylesheet. But
+            that's where the similarities stop; the two methods are very different in their
+            approach.
+        </p>
+
+        <p>
+            Central to XSLT-based styling is the concept of a 'template' - it is XSLT's
+            equivalent for CSS rules. XSLT will try to match the template's pattern with
+            the XML document; when it finds a match, it will perform the transformations
+            described in the template body.
+        </p>
+
+        <p>
+            Here's an XSL which would display the movies.xml file as a table:
+        </p>
+
+<code>
+01 &lt;?xml version="1.0"?&gt;
+02 &lt;xsl:stylesheet 
+03 version="1.0" 
+04 xmlns:xsl="http://www.w3.org/1999/XSL/Transform" &gt;
+05 &lt;xsl:template match="/"&gt;
+06 &lt;html&gt;
+07     &lt;body style="font:12px Georgia;"&gt;
+08         &lt;table style="border: 1px outset; background-color: lightgray;"&gt;
+09             &lt;!--Generate table headings--&gt;
+10             &lt;tr bgcolor="#9acd32"&gt;
+11                 &lt;th&gt;Title&lt;/th&gt;
+12                 &lt;th&gt;Year&lt;/th&gt;
+13                 &lt;th&gt;Rating&lt;/th&gt;
+14             &lt;/tr&gt;
+15 
+16             &lt;!--Generate table rows--&gt;
+17             &lt;xsl:for-each select="movies/movie"&gt;
+18                 &lt;tr&gt;
+19                     &lt;td&gt;&lt;xsl:value-of select="title"/&gt;&lt;/td&gt;
+20                     &lt;td&gt;&lt;xsl:value-of select="year"/&gt;&lt;/td&gt;
+21                     &lt;td&gt;&lt;xsl:value-of select="rating"/&gt;&lt;/td&gt;
+22                 &lt;/tr&gt;
+23             &lt;/xsl:for-each&gt;
+24         &lt;/table&gt;
+25     &lt;/body&gt;
+26 &lt;/html&gt;
+27 &lt;/xsl:template&gt;
+28 &lt;/xsl:stylesheet&gt;
+</code>
+
+        <p>
+            The XML file needs to know about this XSL stylesheet; so this line needs to be added to the XML file, assuming the XSL has the 'movies-xsl-style.xsl':
+        </p>
+
+<code>2 &lt;?xml-stylesheet type="text/xsl" href="movies-xsl-style.xsl"?&gt;</code>
+
+        <p>
+            This is how the XML file was rendered by Firefox 8.0:
+        </p>
+
+        <img src="img/xml-table-with-xsl.png" />
+
+        <p>
+            Which is exactly how I wanted it to look. This example illustrates the
+            advantages and potential drawbacks of using XSL fro styling XML documents.
+        </p>
+
+        <p>
+            Among the drawbacks, the most obvious one is the learning curve - although XSL
+            stylesheets are XML documents themselves, they have numerous tags with a
+            specific role ( more precisely, those inside the
+            http://www.w3.org/1999/XSL/Transform namespace ), which means that it is still
+            a technology that one would need to spend considerable amounts of time to
+            learn. It can be considered a fully-fledged programming language, with loops,
+            if's and variables.
+        </p>
+
+        <p>
+            Browser support is also quite limited for XSLT 2.0; however, this doesn't
+            diminish it's usefulness on the server side. Instead of serving the XML + XSL
+            documents and relying on the client's browser to perform the transformations,
+            the transformations could be run on the server ( using tools such as Saxon or
+            AltovaXML ), generating XHTML files which would then be served to the clients.
+        </p>
+
+        <p>
+            One of the most important advantages of using XSL to style XML documents is the
+            fact that it respects the principle of keeping the data and presentation
+            separate, while providing the same styling capabilities as with CSS
+            stylesheets, and much more powerful constructs.
+        </p>
+
+    </body>
+
+</blog_post>        
