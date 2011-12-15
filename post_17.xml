@@ -20,7 +20,7 @@
             resulting data model will ultimately be implemented in one ( or more ) of the
             available technologies, the logical data model might be adjusted for the
             particular computing system on which the physical data model is to be
-            implemented – in this case, XML.
+            implemented - in this case, XML.
         </p>
         <p>
             A logical data model consists of three main components: entities, attributes,
