@@ -47,7 +47,6 @@
 
         <p>
             On the server side, employing AJAX technologies can lead to <em>very high
-            On the server side, employign AJAX technologies can lead to <em>very high
                 number of requests</em> to serve, which might be difficult to cope for the
             servers. But companies usually take this into account, and purchase hardware
             which can cope with the increased load; this is rarely an issue.
