@@ -94,7 +94,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         </p>
         <xsl:apply-templates select="body/code"/>
         <xsl:apply-templates select="options"/>
-        <p>
+        <p class="answer">
             <xsl:value-of select="answer"/>
         </p>
         <hr/>

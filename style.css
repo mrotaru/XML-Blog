@@ -41,3 +41,8 @@ pre
 /*    height: 400px;*/
     overflow: auto;
 }
+
+p.answer
+{
+    font-style: italic;
+}
