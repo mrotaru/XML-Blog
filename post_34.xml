@@ -15,14 +15,14 @@
     <body>
         <p>
             Since it's emergence as a mainstream technology, AJAX has proven it's
-            usfulness. AJAX technologies are now employed by companies such as Microsoft
+            usefulness. AJAX technologies are now employed by companies such as Microsoft
             and Google, and are used by millions of web pages.
         </p>
 
         <p>
             AJAX does, however have drawbacks which take away from it's shine. One of the
             main concerns with AJAX technologies is with it's impact on <em>usability</em>
-            - certain screen readers and other accessiblity devices might not respond well
+            - certain screen readers and other accessibility devices might not respond well
             to dynamically updated web pages.
         </p>
 
@@ -46,7 +46,7 @@
         </p>
 
         <p>
-            On the server side, employign AJAX technologies can lead to <em>very high
+            On the server side, employing AJAX technologies can lead to <em>very high
                 number of requests</em> to serve, which might be difficult to cope for the
             servers. But companies usually take this into account, and purchase hardware
             which can cope with the increased load; this is rarely an issue.
