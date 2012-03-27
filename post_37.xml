@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>Conclusion</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>27 March 2012</date>
+        <tags>
+            <tag>XML</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            This is the conclusion.
+        </p>
+        
+    </body>
+
+</blog_post>        
