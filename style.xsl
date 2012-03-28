@@ -23,17 +23,22 @@
                         <xsl:for-each select="document(/root/@posts)/posts/post">
                             <xsl:variable name="post_title" select="@title"/>
                             <xsl:variable name="filename" select="@filename"/>
-                            <a>
-                                <li>
+                            <li>
+                                <a>
+                                    <xsl:attribute name="id">
+                                        <xsl:value-of select="$filename"/>
+                                    </xsl:attribute>
                                     <xsl:attribute name="href">
                                         <xsl:value-of select="$filename"/>
                                     </xsl:attribute>
                                     <xsl:value-of select="$post_title"/>
-                                </li>
-                            </a>
+                                </a>
+                            </li>
                         </xsl:for-each>
                     </ul>
                 </nav>
+                <div id="content">
+                </div>
             </div>
 
             <footer>

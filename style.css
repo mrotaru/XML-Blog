@@ -5,13 +5,6 @@ body
     background-color: #F6F5EE;
 }
 
-ul
-{
-    list-style-type: none;
-    list-style-position: inside;
-    margin:0;
-    padding: 1em;
-}
 
 header
 {
@@ -34,25 +27,38 @@ nav
     border-right: 1px solid black;
 }
 
+nav ul
+{
+    list-style: none;
+    list-style-type: none;
+    list-style-position: inside;
+    margin:0;
+    padding: 0;
+    border: none;
+}
+
 nav li
 {
+    border-bottom: 1px solid #EEE;
+    height: 1.3em;
+    overflow: hidden;
+}
+
+nav li a
+{
     display: block;
-}
-
-nav li, nav li:visited
-{
     color: #3B0F1C;
-    height: 1.2em;
-    overflow: hidden;
+    width: 100%;
+    text-decoration: none;
+    margin-left: 10px;
 }
 
-nav li:hover
+html>body nav li a { width: auto; }
+
+nav li a:hover
 {
-    color: #963414;
     background-color: white;
-    height: 1.2em;
-    overflow: hidden;
-    cursor: pointer;
+    color: #963414;
 }
 
 nav li .current
@@ -62,8 +68,7 @@ nav li .current
 
 #content
 {
-    margin-left: 9em;
-    background-color: #F2F2F2;
+    margin-left: 320px;
     font: 18px Georgia;
     padding: 20px;
     overflow: auto;
