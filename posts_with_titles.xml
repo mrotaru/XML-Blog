@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<posts>
+    <title>XML Report</title>
+
+<!--    Introduction-->
+    <post filename="posts/post_00.xml" title="Introduction"/> <!-- Introduction -->
+
+<!--    General-->
+    <post filename="posts/post_01.xml" title="Questions, part 1"/> <!-- Questions, part 1 -->
+    <post filename="posts/post_02.xml" title="Questions, part 2"/> <!-- Questions, part 2 -->
+    <post filename="posts/post_03.xml" title="Questions, part 3"/> <!-- Questions, part 3 -->
+    <post filename="posts/post_04.xml" title="What is XML well-formedness and how could you measure it?"/> <!-- What is XML well-formedness and how could you measure it? -->
+    <post filename="posts/post_05.xml" title="What is XML validation and what is the output?"/> <!-- What is XML validation and what is the output? -->
+    <post filename="posts/post_07.xml" title="What is the importance of the first line of an XML document? "/> <!-- What is the importance of the first line of an XML document? -->
+    <post filename="posts/post_08.xml" title="What are the differences between elements and attributes and what are their different uses?"/> <!-- What are the differences between elements and attributes and what are their different uses? -->
+    <post filename="posts/post_18.xml" title="Namespaces in XML"/> <!-- Namespaces in XML -->
+    <post filename="posts/post_15.xml" title="XML Entities"/> <!-- XML Entities -->
+    <post filename="posts/post_31.xml" title="Is the semantic web a failure?"/> <!-- Is the semantic web a failure? -->
+
+<!--    Related technologies-->
+    <post filename="posts/post_28.xml" title="The W3C XML Schema"/> <!-- The W3C XML Schema -->
+    <post filename="posts/post_13.xml" title="What are the implications of the concept of the document tree?"/> <!-- What are the implications of the concept of the document tree? -->
+    <post filename="posts/post_26.xml" title="What is the DOM ?"/> <!-- What is the DOM ? -->
+    <post filename="posts/post_27.xml" title="Evaluating SAX"/> <!-- Evaluating SAX -->
+    <post filename="posts/post_09.xml" title="What is AJAX and what are its purposes?"/> <!-- What is AJAX and what are its purposes? -->
+    <post filename="posts/post_34.xml" title="Is AJAX both a success and a failure?"/> <!-- Is AJAX both a success and a failure? -->
+    <post filename="posts/post_19.xml" title="What is XPath ?"/> <!-- What is XPath ? -->
+    <post filename="posts/post_29.xml" title="XIML"/> <!-- XIML -->
+    <post filename="posts/post_24.xml" title="What is XLink ?"/> <!-- What is XLink ? -->
+    <post filename="posts/post_30.xml" title="XUL"/> <!-- XUL -->
+
+<!--    Styling and presentation-->
+    <post filename="posts/post_10.xml" title="What is the current status of CSS?"/> <!-- What is the current status of CSS? -->
+    <post filename="posts/post_11.xml" title="What is the current status of XSL?"/> <!-- What is the current status of XSL? -->
+    <post filename="posts/post_12.xml" title="What are the relative merits of CSS and XSL?"/> <!-- What are the relative merits of CSS and XSL? -->
+    <post filename="posts/post_20.xml" title="Using XSL to generate HTML"/> <!-- Using XSL to generate HTML -->
+    <post filename="posts/post_06.xml" title="How can an XML document be best presented?"/> <!-- How can an XML document be best presented? -->
+    <post filename="posts/post_21.xml" title="Styling XML with CSS"/> <!-- Styling XML with CSS -->
+    <post filename="posts/post_22.xml" title="Styling XML with XSL"/> <!-- Styling XML with XSL -->
+    <post filename="posts/post_23.xml" title="Transforming XML with XSLT"/> <!-- Transforming XML with XSLT -->
+
+<!--    Applications-->
+    <post filename="posts/post_17.xml" title="Logical data modelling in XML"/> <!-- Logical data modelling in XML -->
+    <post filename="posts/post_25.xml" title="Scalable Vector Graphics"/> <!-- Scalable Vector Graphics -->
+    <post filename="posts/post_35.xml" title=".doc versus .docx"/> <!-- .doc versus .docx -->
+    <post filename="posts/post_36.xml" title="XML Spy"/> <!-- XML Spy -->
+
+<!--    Issues-->
+    <post filename="posts/post_33.xml" title="What is wrong with XML?"/> <!-- What is wrong with XML? -->
+    <post filename="posts/post_16.xml" title="Encodings and character sets in XML"/> <!-- Encodings and character sets in XML -->
+    <post filename="posts/post_32.xml" title="XML Security"/> <!-- XML Security -->
+    <post filename="posts/post_14.xml" title="Example of XML errors"/> <!-- Example of XML errors -->
+
+<!--    Conclusion-->
+    <post filename="posts/post_37.xml" title="Conclusion"/> <!-- Conclusion -->
+</posts>
