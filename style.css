@@ -1,14 +1,84 @@
 body
 {
-    width: 70%;
     margin-left: auto;
     margin-right: auto;
-    background-color: #342E3D;
+    background-color: #F6F5EE;
 }
 
 ul
 {
-/*    list-style: none;*/
+    list-style-type: none;
+    list-style-position: inside;
+    margin:0;
+    padding: 1em;
+}
+
+header
+{
+    border-bottom: 3px solid black;
+    font: 18px Impact;
+}
+
+h1
+{
+    padding-left: 40px;
+    color: #3B0F1C;
+}
+
+
+nav
+{
+    background: white url(bg/pixel-grid-bg.png) repeat;
+    font: 1em tahoma, verdana;
+    width: 320px;
+    border-right: 1px solid black;
+}
+
+nav li
+{
+    display: block;
+}
+
+nav li, nav li:visited
+{
+    color: #3B0F1C;
+    height: 1.2em;
+    overflow: hidden;
+}
+
+nav li:hover
+{
+    color: #963414;
+    background-color: white;
+    height: 1.2em;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+nav li .current
+{
+    background-color: gray;
+}
+
+#content
+{
+    margin-left: 9em;
+    background-color: #F2F2F2;
+    font: 18px Georgia;
+    padding: 20px;
+    overflow: auto;
+}
+
+p.answer
+{
+    font-style: italic;
+}
+
+* {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition:    all 0.2s ease;
+  -ms-transition:     all 0.2s ease;
+  -o-transition:      all 0.2s ease;
 }
 
 var 
@@ -24,25 +94,4 @@ pre
     margin-left: 2em;
     border: 1px solid black;
     padding: 10px;
-}
-
-#container
-{
-    background-color: #DBB0B5;
-    border: 3px solid black;
-}
-
-#content
-{
-    margin-left: 9em;
-    background-color: #F2F2F2;
-    font: 18px Georgia;
-    padding: 20px;
-/*    height: 400px;*/
-    overflow: auto;
-}
-
-p.answer
-{
-    font-style: italic;
 }

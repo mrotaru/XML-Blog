@@ -5,21 +5,39 @@
     <xsl:variable name="title" select="document(/root/@posts)/posts/title"/>
     <html>
         <head>
+            <link rel="stylesheet" href="style.css"/>
             <title>
                 <xsl:value-of select="$title"/>
             </title>
         </head>
         <body>
-            <h1>
-                <xsl:value-of select="$title"/>
-            </h1>
-            <ul>
-                <xsl:for-each select="document(/root/@posts)/posts/post">
-                    <li>
-                        <xsl:value-of select="@title"/>
-                    </li>
-                </xsl:for-each>
-            </ul>
+            <header>
+                <h1>
+                    <xsl:value-of select="$title"/>
+                </h1>
+            </header>
+
+            <div id="container">
+                <nav>
+                    <ul>
+                        <xsl:for-each select="document(/root/@posts)/posts/post">
+                            <xsl:variable name="post_title" select="@title"/>
+                            <xsl:variable name="filename" select="@filename"/>
+                            <a>
+                                <li>
+                                    <xsl:attribute name="href">
+                                        <xsl:value-of select="$filename"/>
+                                    </xsl:attribute>
+                                    <xsl:value-of select="$post_title"/>
+                                </li>
+                            </a>
+                        </xsl:for-each>
+                    </ul>
+                </nav>
+            </div>
+
+            <footer>
+            </footer>
         </body>
     </html>
 
