@@ -2,15 +2,16 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:template match="/">
 
+    <xsl:variable name="title" select="document(/root/@posts)/posts/title"/>
     <html>
         <head>
             <title>
-                <xsl:value-of select="document(/root/@posts)/posts/title"/>
+                <xsl:value-of select="$title"/>
             </title>
         </head>
         <body>
             <h1>
-                <xsl:value-of select="document(/root/@posts)/posts/title"/>
+                <xsl:value-of select="$title"/>
             </h1>
             <ul>
                 <xsl:for-each select="document(/root/@posts)/posts/post">
