@@ -89,6 +89,11 @@ nav li .current
     background-color: #191724;
 }
 
+#tooltip p
+{
+    margin: 3px;
+}
+
 #content
 {
     margin-left: 320px;

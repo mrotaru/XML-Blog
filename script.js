@@ -93,16 +93,32 @@ function zeroFill( number, width )
   return number;
 }
 
+function load_blog_post( filename )
+{
+    console.info("loading: " + filename );
+    xml_post=loadXMLDoc( filename );
+
+}
+
 function get_tooltip_html( filename )
 {
-    xml_posts=loadXMLDoc( filename );
+    console.info("loading: " + filename );
     // load xml file
+    xml_meta=loadXMLDoc( filename );
+
     // extract info
-    // return
+    var author_name = xml_meta.evaluate( "head/author/name", xml_meta, null, XPathResult.STRING_TYPE, null );
+    var author_surname = xml_meta.evaluate( "head/author/surname", xml_meta, null, XPathResult.STRING_TYPE, null );
+    var author = author_name.stringValue + " " + author_surname.stringValue.charAt(0) + ".";
+    var date = xml_meta.evaluate( "head/date", xml_meta, null, XPathResult.STRING_TYPE, null );
+    var tags = xml_meta.evaluate( "head/tags", xml_meta, null, XPathResult.ANY_TYPE, null );
+
+    return "<p>Author: " + author + "</p>" + "<p>Date: " + date.stringValue + "</p>";
 }
 
 function generate_tooltips()
 {
+    var meta_folder = "build/posts";
     console.info("generating tooltips");
     var i=0;
     var re = new RegExp(/(^.+_)(\d+)(\\.xml)'/i);
@@ -114,10 +130,10 @@ function generate_tooltips()
         $(this).tooltip({
             bodyHandler: function() {
                 return '<h3>' + $(this).attr("my_title") + '</h3>' +
-                '<p>A very interesting blog post</p>';
+                get_tooltip_html( meta_folder + "/post_" + zeroFill( post_number, 2 ) + "_meta.xml" );
             },
             track: true,
-            delay: 0,
+            delay: 200,
             showURL: false,
             showBody: " - ",
             fade: 150
