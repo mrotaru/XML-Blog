@@ -96,8 +96,26 @@ function zeroFill( number, width )
 function load_blog_post( filename )
 {
     console.info("loading: " + filename );
-    xml_post=loadXMLDoc( filename );
+    xml = loadXMLDoc( filename );
+    xsl = loadXMLDoc( "transform.xsl" );
 
+    // code for IE
+    if( window.ActiveXObject )
+    {
+        ex = xml.transformNode( xsl );
+//        document.getElementById( "example").innerHTML=ex;
+        $("#content").html = ex;
+    }
+    // code for Mozilla, Firefox, Opera, etc.
+    else if (document.implementation && document.implementation.createDocument)
+    {
+        xsltProcessor=new XSLTProcessor();
+        xsltProcessor.importStylesheet(xsl);
+        resultDocument = xsltProcessor.transformToFragment(xml,document);
+        console.log( resultDocument );
+//        document.getElementById("content").appendChild(resultDocument);
+        $("#content").html( resultDocument );
+    }
 }
 
 function get_tooltip_html( filename )
@@ -119,14 +137,17 @@ function get_tooltip_html( filename )
 function generate_tooltips()
 {
     var meta_folder = "build/posts";
-    console.info("generating tooltips");
+    var posts_folder = "posts";
+
+    // for each anchor in a list item in a nav
     var i=0;
-    var re = new RegExp(/(^.+_)(\d+)(\\.xml)'/i);
     $('nav li a').each( function() {
-        var filename = $(this).attr("href");
+        var filename = $(this).attr("filename");
         var number_match = filename.match( /(^.+_)(\d+)(\.xml)/i );
         var post_number = parseInt( number_match[2] );
         var post_id = '#post_' + post_number + '_anchor';
+
+        // add a tooltip
         $(this).tooltip({
             bodyHandler: function() {
                 return '<h3>' + $(this).attr("my_title") + '</h3>' +
@@ -138,13 +159,19 @@ function generate_tooltips()
             showBody: " - ",
             fade: 150
         });
+
+        // set click action
+        var cfn =posts_folder + "/" + filename;
+        console.info( cfn );
+        $(this).click( function(e) {
+            load_blog_post(cfn);
+        });
         i++;
     });
 }
 
 function init()
 {
-    $("#content").html('<a href="http://www.google.co.uk" title="This is a tooltit which works!">This was added with JQuery!</a>');
     xml_posts=loadXMLDoc("posts_with_titles.xml");
     generate_tooltips();
 }

@@ -51,9 +51,14 @@
                                         <xsl:value-of select="$post_title"/>
                                     </xsl:attribute>
 
-                                    <xsl:attribute name="href">
+                                    <xsl:attribute name="filename">
                                         <xsl:value-of select="$filename"/>
                                     </xsl:attribute>
+
+                                    <xsl:attribute name="href">
+                                        <xsl:text>#</xsl:text>
+                                    </xsl:attribute>
+
                                     <xsl:value-of select="$post_title"/>
                                 </a>
                             </li>

@@ -96,9 +96,9 @@ nav li .current
 
 #content
 {
-    margin-left: 320px;
+    margin-left: 180px;
     font: 18px Georgia;
-    padding: 20px;
+/*    padding: 20px;*/
     overflow: auto;
 }
 
