@@ -82,13 +82,6 @@ function get_firstchild( node )
     return x;
 }
 
-function get_tooltip_html( id )
-{
-    // load xml file
-    // extract info
-    // return
-}
-
 // from: http://stackoverflow.com/a/1267338/447661
 function zeroFill( number, width )
 {
@@ -100,14 +93,25 @@ function zeroFill( number, width )
   return number;
 }
 
+function get_tooltip_html( filename )
+{
+    xml_posts=loadXMLDoc( filename );
+    // load xml file
+    // extract info
+    // return
+}
 
 function generate_tooltips()
 {
     console.info("generating tooltips");
     var i=0;
-    $('nav li').each( function() {
-        console.info( zeroFill( i,2 ));
-        $('#post_' + zeroFill( i, 2 ) + '_anchor').tooltip({
+    var re = new RegExp(/(^.+_)(\d+)(\\.xml)'/i);
+    $('nav li a').each( function() {
+        var filename = $(this).attr("href");
+        var number_match = filename.match( /(^.+_)(\d+)(\.xml)/i );
+        var post_number = parseInt( number_match[2] );
+        var post_id = '#post_' + post_number + '_anchor';
+        $(this).tooltip({
             bodyHandler: function() {
                 return '<h3>' + $(this).attr("my_title") + '</h3>' +
                 '<p>A very interesting blog post</p>';

@@ -35,11 +35,11 @@
                             <!-- JQuery apparently has issues with id's containing periods and commas, so remove them.-->
                             <!-- The generated anchors will have id's of the form: -->
                             <!-- <a id="post_01_anchor"> -->
-                                <xsl:variable name="id" select="concat(
-                                                                    translate( 
-                                                                        substring($filename, 0, string-length($filename)-3), '.,','_'),
-                                                                    '_anchor'
-                                                                    )"/>
+                            <xsl:variable name="id" select="concat(
+                                                                translate( 
+                                                                    substring($filename, 0, string-length($filename)-3), '.,','_'),
+                                                                '_anchor'
+                                                                )"/>
                             <li>
                                 <a>
                                     <xsl:attribute name="id">

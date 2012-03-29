@@ -73,8 +73,9 @@ nav li .current
 {
     position: absolute;
     border: 1px solid black;
-    font: 1em tahoma, verdana;
-    background-color: white;
+    font: 0.8em tahoma, verdana;
+    background-color: #4C4547;
+    color: white;
     margin: 0;
     padding: 0;
 }
@@ -82,8 +83,10 @@ nav li .current
 #tooltip h3
 {
     padding: 5px;
+    font: 1.2em tahoma, verdana;
     margin: 0;
-    background-color: gray;
+    color: #FDB157; 
+    background-color: #191724;
 }
 
 #content
