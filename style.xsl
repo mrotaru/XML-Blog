@@ -19,13 +19,15 @@
             </title>
         </head>
         <body>
-            <header>
-                <h1>
-                    <xsl:value-of select="$title"/>
-                </h1>
-            </header>
-
             <div id="container">
+                <header>
+                    <h1>
+                        <xsl:text>&lt;</xsl:text>
+                        <xsl:value-of select="$title"/>
+                        <xsl:text>&gt;</xsl:text>
+                    </h1>
+                </header>
+
                 <nav>
                     <ul>
                         <xsl:for-each select="document(/root/@posts)/posts/post">
@@ -35,42 +37,42 @@
                             <!-- JQuery apparently has issues with id's containing periods and commas, so remove them.-->
                             <!-- The generated anchors will have id's of the form: -->
                             <!-- <a id="post_01_anchor"> -->
-                            <xsl:variable name="id" select="concat(
-                                                                translate( 
-                                                                    substring($filename, 0, string-length($filename)-3), '.,','_'),
-                                                                '_anchor'
-                                                                )"/>
-                            <li>
-                                <a>
-                                    <xsl:attribute name="id">
-                                        <xsl:value-of select="$id"/>
-                                    </xsl:attribute>
+                                <xsl:variable name="id" select="concat(
+                                    translate( 
+                                    substring($filename, 0, string-length($filename)-3), '.,','_'),
+                                    '_anchor'
+                                    )"/>
+                                <li>
+                                    <a>
+                                        <xsl:attribute name="id">
+                                            <xsl:value-of select="$id"/>
+                                        </xsl:attribute>
 
-                                    <!-- adding a tooltip removes the 'title' attribute, so use a different name-->
-                                    <xsl:attribute name="my_title">
+                                        <!-- adding a tooltip removes the 'title' attribute, so use a different name-->
+                                        <xsl:attribute name="my_title">
+                                            <xsl:value-of select="$post_title"/>
+                                        </xsl:attribute>
+
+                                        <xsl:attribute name="filename">
+                                            <xsl:value-of select="$filename"/>
+                                        </xsl:attribute>
+
+                                        <xsl:attribute name="href">
+                                            <xsl:text>#</xsl:text>
+                                        </xsl:attribute>
+
                                         <xsl:value-of select="$post_title"/>
-                                    </xsl:attribute>
+                                    </a>
+                                </li>
+                            </xsl:for-each>
+                        </ul>
+                    </nav>
+                    <div id="content">
+                    </div>
 
-                                    <xsl:attribute name="filename">
-                                        <xsl:value-of select="$filename"/>
-                                    </xsl:attribute>
-
-                                    <xsl:attribute name="href">
-                                        <xsl:text>#</xsl:text>
-                                    </xsl:attribute>
-
-                                    <xsl:value-of select="$post_title"/>
-                                </a>
-                            </li>
-                        </xsl:for-each>
-                    </ul>
-                </nav>
-                <div id="content">
+                    <footer>
+                    </footer>
                 </div>
-            </div>
-
-            <footer>
-            </footer>
         </body>
     </html>
 

@@ -95,6 +95,16 @@ function zeroFill( number, width )
 
 function load_blog_post( filename )
 {
+    var posts_folder = "posts";
+    var number_match = filename.match( /(^.+_)(\d+)(\.xml)/i );
+    var number = ( number_match[2] == '08' ? 8 : number_match[2] );
+    var post_number = zeroFill( number, 2);
+    var post_id = '#post_' + post_number + '_anchor';
+
+    $(".current").removeClass( "current" );
+    $( post_id ).addClass( "current" );
+    
+    filename = posts_folder + "/" + filename;
     console.info("loading: " + filename );
     xml = loadXMLDoc( filename );
     xsl = loadXMLDoc( "transform.xsl" );
@@ -103,17 +113,15 @@ function load_blog_post( filename )
     if( window.ActiveXObject )
     {
         ex = xml.transformNode( xsl );
-//        document.getElementById( "example").innerHTML=ex;
         $("#content").html = ex;
     }
     // code for Mozilla, Firefox, Opera, etc.
-    else if (document.implementation && document.implementation.createDocument)
+    else if( document.implementation && document.implementation.createDocument )
     {
         xsltProcessor=new XSLTProcessor();
-        xsltProcessor.importStylesheet(xsl);
-        resultDocument = xsltProcessor.transformToFragment(xml,document);
+        xsltProcessor.importStylesheet( xsl );
+        resultDocument = xsltProcessor.transformToFragment( xml,document );
         console.log( resultDocument );
-//        document.getElementById("content").appendChild(resultDocument);
         $("#content").html( resultDocument );
     }
 }
@@ -137,7 +145,6 @@ function get_tooltip_html( filename )
 function generate_tooltips()
 {
     var meta_folder = "build/posts";
-    var posts_folder = "posts";
 
     // for each anchor in a list item in a nav
     var i=0;
@@ -161,10 +168,8 @@ function generate_tooltips()
         });
 
         // set click action
-        var cfn =posts_folder + "/" + filename;
-        console.info( cfn );
         $(this).click( function(e) {
-            load_blog_post(cfn);
+            load_blog_post( filename );
         });
         i++;
     });
