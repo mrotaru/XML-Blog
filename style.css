@@ -1,3 +1,19 @@
+@font-face
+{
+    font-family: 'Yanone Kaffeesatz Regular';
+    src: local( 'Yanone Kaffeesatz Regular' ), url( 'fonts/YanoneKaffeesatz-Regular.ttf' ), format( 'truetype' );
+}
+
+@font-face {
+    font-family: "Graublau Web Regular";
+    src: local("Graublau Web Regular"), local("GraublauWeb-Regular"), url("type/GraublauWeb.woff") format("woff"), url("type/GraublauWeb.otf") format("opentype"), url("type/GraublauWeb.svg#GraublauWeb-Regular") format("svg");
+}
+
+@font-face {
+    font-family: "Graublau Web Bold";
+    src: local("Graublau Web Bold"), local("GraublauWeb-Bold"), url("type/GraublauWebBold.woff") format("woff"), url("type/GraublauWebBold.otf") format("opentype"), url("type/GraublauWebBold.svg#GraublauWeb-Bold") format("svg");
+}
+
 html
 {
     background-color: #191724;
@@ -24,12 +40,12 @@ header
     margin: 0;
     padding: 0;
     border-bottom: 3px solid black;
-    font: 18px Impact;
+    font: 18px "Graublau Web Bold";
     background-color: #191724;
     color: #FDB157; 
 }
 
-h1
+neader h1
 {
     padding-left: 40px;
 }
@@ -120,18 +136,18 @@ nav li a:hover
     margin: 3px;
 }
 
+
 #content
 {
     margin-left: 180px;
-    font: 18px Georgia;
+    font: 20px "Graublau Web Regular";
 /*    padding: 20px;*/
     overflow: auto;
 }
 
 #content h1
 {
-    font: bold 25px "Courier New";
-
+    font: bold 25px "Graublau Web Bold";
 }
 
 p.answer
