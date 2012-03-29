@@ -74,6 +74,7 @@ nav li .current
     position: absolute;
     border: 1px solid black;
     font: 1em tahoma, verdana;
+    background-color: white;
     margin: 0;
     padding: 0;
 }

@@ -89,19 +89,36 @@ function get_tooltip_html( id )
     // return
 }
 
+// from: http://stackoverflow.com/a/1267338/447661
+function zeroFill( number, width )
+{
+  width -= number.toString().length;
+  if ( width > 0 )
+  {
+    return new Array( width + (/\./.test( number ) ? 2 : 1) ).join( '0' ) + number;
+  }
+  return number;
+}
+
+
 function generate_tooltips()
 {
     console.info("generating tooltips");
-    $('#post_00_anchor').tooltip({
-        bodyHandler: function() {
-            return '<h3>' + $(this).attr("my_title") + '</h3>' +
-            '<p>A very interesting blog post</p>';
-        },
-        track: true,
-        delay: 0,
-        showURL: false,
-        showBody: " - ",
-        fade: 150
+    var i=0;
+    $('nav li').each( function() {
+        console.info( zeroFill( i,2 ));
+        $('#post_' + zeroFill( i, 2 ) + '_anchor').tooltip({
+            bodyHandler: function() {
+                return '<h3>' + $(this).attr("my_title") + '</h3>' +
+                '<p>A very interesting blog post</p>';
+            },
+            track: true,
+            delay: 0,
+            showURL: false,
+            showBody: " - ",
+            fade: 150
+        });
+        i++;
     });
 }
 
