@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <posts>
-    <title>XML Report</title>
+    <title>XML Blog</title>
 
 <!--    Introduction-->
     <post filename="posts/post_00.xml" title="Introduction"/> <!-- Introduction -->

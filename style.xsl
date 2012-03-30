@@ -22,10 +22,23 @@
             <div id="container">
                 <header>
                     <h1>
-                        <xsl:text>&lt;</xsl:text>
+                        <span>
+                            <xsl:attribute name="class">
+                                <xsl:text>h1_tags</xsl:text>
+                            </xsl:attribute>
+                            <xsl:text>&lt; </xsl:text>
+                        </span>
                         <xsl:value-of select="$title"/>
-                        <xsl:text>&gt;</xsl:text>
+                        <span>
+                            <xsl:attribute name="class">
+                                <xsl:text>h1_tags</xsl:text>
+                            </xsl:attribute>
+                            <xsl:text> &gt;</xsl:text>
+                        </span>
                     </h1>
+                    <h5>
+                        A blog made with XML
+                    </h5>
                 </header>
 
                 <nav>

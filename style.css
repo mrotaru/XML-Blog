@@ -45,9 +45,30 @@ header
     color: #FDB157; 
 }
 
-neader h1
+header h1
 {
-    padding-left: 40px;
+    padding-left: 20px;
+    margin-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+header h5
+{
+    margin: 0;
+    position: relative;
+    top: -5px;
+    left: 30px;
+    padding-left: 20px;
+    color: #8C594E;
+    letter-spacing: 1px;
+    font-weight: normal;
+    font-family: 'Yanone Kaffeesatz Regular';
+}
+
+.h1_tags
+{
+    color: #4C4547;
 }
 
 nav
@@ -174,8 +195,9 @@ pre
 {
     background-color: #EAEAEA;
     margin: 0;
+    font-size: 0.8em;
     margin-left: 2em;
     border: 1px solid black;
-    padding-top: 0;
+    margin-right: 4em;
     padding: 0px 10px 10px 10px; 
 }
