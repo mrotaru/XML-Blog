@@ -4,6 +4,8 @@
     xmlns:fo="http://www.w3.org/1999/XSL/Format"> 
     <xsl:output method="xml" indent="yes"/> 
 
+    <xsl:param name="img_path" select="'img/'"/>
+
     <!--==========================================-->
     <!--  ROOT                                    -->
     <!--==========================================-->
@@ -82,7 +84,7 @@
                     <fo:block>
                         <fo:external-graphic>
                             <xsl:attribute name="src">
-                                <xsl:value-of select="@src"/>
+                                <xsl:value-of select="concat($img_path,substring-after(@src,'/'))"/>
                             </xsl:attribute>
                         </fo:external-graphic>
                     </fo:block>

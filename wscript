@@ -25,7 +25,7 @@ def build( ctx ):
 
     for f in glob.glob('posts/*.xml'):
         ctx( 
-                rule='fop -c ../fop.xconf -xml ../posts/${SRC[0]} -xsl ../${SRC[1]} -pdf ${TGT}', 
+                rule='fop -c ../fop.xconf -param img_path "' + ctx.path.abspath() + '/img/" -xml ../posts/${SRC[0]} -xsl ../${SRC[1]} -pdf ${TGT}', 
                 source = [ str( f ), 'make_pdf.xsl' ], 
                 target = 'pdf/' + os.path.basename( f ).replace( '.xml', '.pdf' )
            )
