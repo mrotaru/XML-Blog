@@ -141,13 +141,24 @@ nav li a:hover
 
 .download_pdf
 {
-/*    border: 1px solid black;*/
     padding: 10px;
+    color: #191724;
     padding-left: 60px;
     background: white url(bg/pdf_icon.png) no-repeat;
+    text-size: 24px;
     text-decoration: none;
+    text-shadow: 0.1em 0.1em 0.2em #D3D3D3;
     background-color: #F6F5EE;
-/*    color: white;*/
+}
+
+.download_pdf:hover
+{
+    color: #8C594E;
+    text-shadow: none;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition:    all 0.2s ease;
+    -ms-transition:     all 0.2s ease;
+    -o-transition:      all 0.2s ease;
 }
 
 #tooltip
@@ -187,6 +198,7 @@ nav li a:hover
 #content h1
 {
     font: bold 25px "Graublau Web Bold";
+    text-shadow: 0.1em 0.1em 0.2em #D3D3D3;
 }
 
 p.answer
