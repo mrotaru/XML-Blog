@@ -93,6 +93,17 @@ function zeroFill( number, width )
   return number;
 }
 
+// return a div for a blog post which contains items such as a
+// link do download the pdf
+function get_post_footer( post_number )
+{
+    var pdf_folder = "build/pdf";
+    var ret_html = '<div class="post_footer">';
+    ret_html += '<p><a href=' + pdf_folder + "/post_" + zeroFill( post_number, 2 ) + ".pdf>";
+    ret_html += 'Download PDF</a></div>';
+    return ret_html;
+}
+
 function load_blog_post( filename )
 {
     var posts_folder = "posts";
@@ -114,6 +125,7 @@ function load_blog_post( filename )
     {
         ex = xml.transformNode( xsl );
         $("#content").html = ex;
+        $("#content").append( get_post_footer( post_number ));
     }
     // code for Mozilla, Firefox, Opera, etc.
     else if( document.implementation && document.implementation.createDocument )
@@ -123,6 +135,7 @@ function load_blog_post( filename )
         resultDocument = xsltProcessor.transformToFragment( xml,document );
         console.log( resultDocument );
         $("#content").html( resultDocument );
+        $("#content").append( get_post_footer( post_number ));
     }
 }
 
@@ -144,7 +157,7 @@ function get_tooltip_html( filename )
 
 function generate_tooltips()
 {
-    var meta_folder = "build/posts";
+    var meta_folder = "build/meta";
 
     // for each anchor in a list item in a nav
     var i=0;

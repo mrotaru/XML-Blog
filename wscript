@@ -20,7 +20,14 @@ def build( ctx ):
         ctx( 
                 rule='xsltproc -o ${TGT} ../${SRC[1]} ../posts/${SRC[0]}', 
                 source = [ str( f ), 'make_meta.xsl' ], 
-                target = str( f ).replace( '.xml', '_meta.xml' )
+                target = 'meta/' + os.path.basename( f ).replace( '.xml', '_meta.xml' )
+           )
+
+    for f in glob.glob('posts/*.xml'):
+        ctx( 
+                rule='fop -c ../fop.xconf -xml ../posts/${SRC[0]} -xsl ../${SRC[1]} -pdf ${TGT}', 
+                source = [ str( f ), 'make_pdf.xsl' ], 
+                target = 'pdf/' + os.path.basename( f ).replace( '.xml', '.pdf' )
            )
 
 def files( ctx ):
