@@ -160,8 +160,10 @@ nav li a:hover
 
 #content
 {
-    margin-left: 180px;
+    margin-left: 320px;
+    padding: 0 1em 2em 1.5em;
     font: 20px "Graublau Web Regular";
+    background-color: #F6F5EE;
 /*    padding: 20px;*/
     overflow: auto;
 }

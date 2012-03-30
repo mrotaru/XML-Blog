@@ -10,76 +10,50 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <!--  MAIN                                    -->
     <!--==========================================-->
     <xsl:template match="/">
-        <html>
-        <xsl:apply-templates select="blog_post"/>
-        </html>
-    </xsl:template>
-
-    <!--==========================================-->
-    <!--  BLOG POST                               -->
-    <!--==========================================-->
-    <xsl:template match="blog_post">
-        <xsl:apply-templates select="head"/>
-        <xsl:apply-templates select="body"/>
-    </xsl:template>
-
-    <!--==========================================-->
-    <!--  HEAD                                    -->
-    <!--==========================================-->
-    <xsl:template match="head">
-        <head>
-            <title><xsl:value-of select="title"/></title>
-            <link rel="stylesheet" type="text/css" href="style.css" />
-        </head>
+        <xsl:apply-templates select="blog_post/body"/>
     </xsl:template>
 
     <!--==========================================-->
     <!--  BODY                                    -->
     <!--==========================================-->
     <xsl:template match="body">
-        <body>
-            <div id="container">
-                <div id="content">
-                    <h1>
-                        <xsl:value-of select="../head/title"/>
-                    </h1>
-                    <hr/>
-                    
-                    <xsl:for-each select="node()">
-                        
-                        <xsl:choose>
-                            <xsl:when test="name()='code'">
-                                <pre>
-                                    <xsl:value-of select="."/>
-                                </pre>
-                            </xsl:when>
-                            
-                            <xsl:when test="name()='img'">
-                                <xsl:copy-of select="." />
-                            </xsl:when>
-                            
-                            <xsl:when test="name()='ul'">
-                                <xsl:copy-of select="." />
-                            </xsl:when>
-                            
-                            <xsl:when test="name()='question'">
-                                <xsl:apply-templates select="."/>
-                            </xsl:when>
-                            
-                            <xsl:when test="name()='p'">
-                                <xsl:apply-templates select="."/>
-                            </xsl:when>
-                            
-                            <xsl:otherwise>
-                                <xsl:value-of select="."/>
-                            </xsl:otherwise>
-                        </xsl:choose>
+        <h1>
+            <xsl:value-of select="../head/title"/>
+        </h1>
+        <hr/>
+        
+        <xsl:for-each select="node()">
+            
+            <xsl:choose>
+                <xsl:when test="name()='code'">
+                    <pre>
+                        <xsl:value-of select="."/>
+                    </pre>
+                </xsl:when>
+                
+                <xsl:when test="name()='img'">
+                    <xsl:copy-of select="." />
+                </xsl:when>
+                
+                <xsl:when test="name()='ul'">
+                    <xsl:copy-of select="." />
+                </xsl:when>
+                
+                <xsl:when test="name()='question'">
+                    <xsl:apply-templates select="."/>
+                </xsl:when>
+                
+                <xsl:when test="name()='p'">
+                    <xsl:apply-templates select="."/>
+                </xsl:when>
+                
+                <xsl:otherwise>
+                    <xsl:value-of select="."/>
+                </xsl:otherwise>
+            </xsl:choose>
 
-                    </xsl:for-each>
+        </xsl:for-each>
 
-                </div>
-            </div>
-        </body>
     </xsl:template>
 
     <!--==========================================-->
