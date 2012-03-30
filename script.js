@@ -99,7 +99,7 @@ function get_post_footer( post_number )
 {
     var pdf_folder = "build/pdf";
     var ret_html = '<div class="post_footer">';
-    ret_html += '<p><a href=' + pdf_folder + "/post_" + zeroFill( post_number, 2 ) + ".pdf>";
+    ret_html += '<a class="download_pdf" href=' + pdf_folder + "/post_" + zeroFill( post_number, 2 ) + ".pdf>";
     ret_html += 'Download PDF</a></div>';
     return ret_html;
 }
