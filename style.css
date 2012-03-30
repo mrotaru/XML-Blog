@@ -1,0 +1,233 @@
+@font-face
+{
+    font-family: 'Yanone Kaffeesatz Regular';
+    src: local( 'Yanone Kaffeesatz Regular' ), url( 'fonts/YanoneKaffeesatz-Regular.ttf' ), format( 'truetype' );
+}
+
+@font-face {
+    font-family: "Graublau Web Regular";
+    src: local("Graublau Web Regular"), local("GraublauWeb-Regular"), url("type/GraublauWeb.woff") format("woff"), url("type/GraublauWeb.otf") format("opentype"), url("type/GraublauWeb.svg#GraublauWeb-Regular") format("svg");
+}
+
+@font-face {
+    font-family: "Graublau Web Bold";
+    src: local("Graublau Web Bold"), local("GraublauWeb-Bold"), url("type/GraublauWebBold.woff") format("woff"), url("type/GraublauWebBold.otf") format("opentype"), url("type/GraublauWebBold.svg#GraublauWeb-Bold") format("svg");
+}
+
+html
+{
+    background-color: #191724;
+    height: 100%;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #F6F5EE;
+}
+
+#container
+{
+    min-height: 100%;
+}
+
+header
+{
+    margin: 0;
+    padding: 0;
+    border-bottom: 3px solid black;
+    font: 18px "Graublau Web Bold";
+    background-color: #191724;
+    color: #FDB157; 
+}
+
+header h1
+{
+    padding-left: 20px;
+    margin-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+header h5
+{
+    margin: 0;
+    position: relative;
+    top: -5px;
+    left: 30px;
+    padding-left: 20px;
+    color: #8C594E;
+    letter-spacing: 1px;
+    font-weight: normal;
+    font-family: 'Yanone Kaffeesatz Regular';
+}
+
+.h1_tags
+{
+    color: #4C4547;
+}
+
+nav
+{
+    position: absolute;
+    left: 0;
+    padding: 0;
+    width: 320px;
+    background: white url(bg/pixel-grid-bg.png) repeat;
+    font: 1em tahoma, verdana;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+nav ul
+{
+    list-style: none;
+    list-style-type: none;
+    list-style-position: inside;
+    margin:0;
+    padding: 0;
+    border: none;
+}
+
+nav li
+{
+    border-bottom: 1px solid #EEE;
+    height: 1.3em;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+nav li a
+{
+    display: block;
+    color: #3B0F1C;
+    width: 100%;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+html>body nav li a { width: auto; }
+
+nav li a:hover
+{
+    background-color: white;
+    color: #963414;
+}
+
+.current
+{
+    background-color: #8C594E !important;
+    background: url("bg/bullet.png") no-repeat top left;
+    padding-left: 1.3em;
+    color: white !important;
+    list-style-type: circle !important;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition:    all 0.6s ease;
+    -ms-transition:     all 0.6s ease;
+    -o-transition:      all 0.6s ease;
+}
+
+.post_footer
+{
+    height: 100px;
+    margin: 0;
+    margin-top: 2em;
+}
+
+.download_pdf
+{
+    padding: 10px;
+    color: #191724;
+    padding-left: 60px;
+    background: white url(bg/pdf_icon.png) no-repeat;
+    text-size: 24px;
+    text-decoration: none;
+    text-shadow: 0.1em 0.1em 0.2em #D3D3D3;
+    background-color: #F6F5EE;
+}
+
+.download_pdf:hover
+{
+    color: #8C594E;
+    text-shadow: none;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition:    all 0.2s ease;
+    -ms-transition:     all 0.2s ease;
+    -o-transition:      all 0.2s ease;
+}
+
+#tooltip
+{
+    position: absolute;
+    border: 1px solid black;
+    font: 0.8em tahoma, verdana;
+    background-color: #4C4547;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+#tooltip h3
+{
+    padding: 5px;
+    font: 1.2em tahoma, verdana;
+    margin: 0;
+    color: #FDB157; 
+    background-color: #191724;
+}
+
+#tooltip p
+{
+    margin: 3px;
+}
+
+#content
+{
+    margin-left: 320px;
+    padding: 0 1em 2em 1.5em;
+    font: 20px "Graublau Web Regular";
+    background-color: #F6F5EE;
+    overflow: auto;
+}
+
+#content h1
+{
+    font: bold 25px "Graublau Web Bold";
+    text-shadow: 0.1em 0.1em 0.2em #D3D3D3;
+}
+
+p.answer
+{
+    font-style: italic;
+}
+
+nav *
+{
+  -webkit-transition: all 0.2s ease;
+  -moz-transition:    all 0.2s ease;
+  -ms-transition:     all 0.2s ease;
+  -o-transition:      all 0.2s ease;
+}
+
+var 
+{
+    background-color: #EAEAEA;
+    font-family: monospace;
+    font-style: normal;
+}
+
+pre
+{
+    background-color: #EAEAEA;
+    margin: 0;
+    font-size: 0.8em;
+    margin-left: 2em;
+    border: 1px solid black;
+    margin-right: 4em;
+    padding: 0px 10px 10px 10px; 
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>What is the current status of XSL?</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>XSL</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            XSL was developed initially as a specification for defining how an XML document
+            is to be displayed. Over the course of it's evolution, it split into three
+            components: XSL Transformation ( XSLT ), XSL Formatting Objects ( XFO ), and
+            the XML Path ( XPath ). XPath, unlike XSLT and XFO, does not have an XML
+            syntax; it is used to specify parts of an XML document.
+        </p>
+        <p>
+            Much like CSS3 modules, the different components of XSL can have different a
+            status and version, although XPath and XSLT usually have the same version
+            because they are developed in tandem. Support for XSL technologies varies
+            with browsers and applications, but overall browsers have good support for XSL,
+            for quite a long time; Internet Explorer 5 supported the XSLT1.0 draft
+            specification since 1999, although the final recommendation was different from
+            the draft.
+        </p>
+        <p>
+            Currently, all major browsers fully implement the XSLT1.0 specification.
+            However, even though XSLT 2.0 reached the W3C Recommendation status in 2007,
+            support for it remains rare in browsers, and XSLT 1.0 remains in widespread
+            usage.
+        </p>
+
+    </body>
+
+</blog_post>        

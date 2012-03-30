@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>Questions, part 2</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>2 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+        </tags>
+    </head>
+
+    <body>
+        <question>
+            <body>
+                1.7	Which of the following statements DOES NOT apply to XML?  Select one response and write the letter
+                here
+            </body>
+            <selectedanswer>b</selectedanswer>
+            <options>
+                <option>XML is a set of rules for encoding documents electronically</option>
+                <option>XML is a predecessor of SGML</option>
+                <option>XML explicitly identifies the knowledge structure in the encoded document, so that software packages can use this structure</option>
+                <option>XML approach allow you to specify the presentation of the document, and the hypertext links</option>
+            </options>
+            
+            <after>
+                Explain your choice 
+            </after>
+            
+            <answer>
+                SGML is not a predecessor of SGML, to the contrary, XML was derived from SGML,
+                as SGML was unnecessarily complex for some tasks.
+            </answer>
+        </question>
+
+        <question>
+            <body>
+                1.8 Which of the following statements DOES NOT apply to XML?  Select one response and write the letter
+                here
+            </body>
+            <selectedanswer>d</selectedanswer>
+            <options>
+                <option>XML underpins the www</option>
+                <option>XML underpins office apps</option>
+                <option>XML supports the creation of new markup languages</option>
+                <option>XML is written in Java</option>
+            </options>
+            
+            <after>
+                Give examples  to illustrate your answers               
+            </after>
+            
+            <answer>
+                It is incorrect to say that XML is written in a specific
+                programming language; XML is a standard, defined by the W3C.
+                XML files are text files, which are not written in any
+                particular programming language, and the application which
+                consumes a particular flavor of XML files can be written in any
+                programming language.
+            </answer>
+        </question>
+
+        <question>
+            <body>
+                1.9 What does XIML stand for? Select one response and write the letter
+                here
+            </body>
+            <selectedanswer>c</selectedanswer>
+            <options>
+                <option>Extensible Intelligent Markup Language</option>
+                <option>Extended Invisible Markup Language </option>
+                <option>Extensible Interface Markup Language</option>
+                <option>Extraterrestrial Interactive Markup Language</option>
+            </options>
+            
+            <after>
+                Explain the implications of this acronym                
+            </after>
+            
+            <answer>
+                XIML was created to address the lack of a standardized method
+                of representing interaction data, the data that relates to user
+                interfaces. It is a markup language based on XML, which is
+                extensible ( hence the 'X', from 'eXtensible' ), 
+            </answer>
+        </question>
+
+        <question>
+            <body>
+                1.10 What is the purpose of XIML? Select one response and write the letter
+                here
+            </body>
+            <selectedanswer>a</selectedanswer>
+            <options>
+                <option>A Universal Language for User Interfaces</option>
+                <option>A Markup Language Intelligent Applications</option>
+                <option>A Language for Unseen Web Features</option>
+                <option>A Markup Language for Extraterrestrial Maps</option>
+            </options>
+            
+            <after>
+                Why is XIML needed? 
+            </after>
+            
+            <answer>
+                While XML provides the needed framework for creating various
+                document types, no such framework exists for interaction data.
+                This is the problem XIML addresses - it provides developers
+                with a way to represent and manipulate interaction data. One of
+                the benefits is that a XIML user interface could have multiple
+                target displays - for example, one for the web ( which would
+                output HTML code), and another one for  the .NET framework on
+                Windows - which would generate the corresponding C# code.
+            </answer>
+        </question>
+        
+    </body>
+
+</blog_post>        

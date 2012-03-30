@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>What are the differences between elements and attributes and what are their different uses?</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+            <tag>element</tag>
+            <tag>attribute</tag>
+        </tags>
+    </head>
+
+    <body>
+
+        <p>
+            As defined in the XML standard, a well-formed XML document must contain one or
+            more elements; an element is has the form STag content ETag - it consists of
+            content, enclosed between a start tag and an end tag. An XML document will not
+            be valid if the name of the start tag does not match, case-sensitively, the end
+            tag.
+        </p>
+        <p>
+            To ensure validity of the document, all contained elements must be valid - it
+            must respect XML syntax, and the DTD or XML Schema, if it has one. If the
+            element is defined empty, then it must not have any content, not even comments
+            or whitespace. Elements are used for the semantic markup of the XML document.
+        </p>
+        <p>
+            An element can have zero, one or more attributes, which are declared inside an
+            attribute-list declaration and are used to describe various properties of the
+            element they are attached to. Attribute-list declarations can also be used to
+            provide default values for attributes. To ensure well-formedness, an attribute
+            must not appear more than one time in the same tag. Another well-formedness
+            constraint is that attribute values must not contain the '&lt;' character, and
+            that values must be enclosed in quotes.
+        </p>
+        <p>
+            The exact meaning of an attribute, and how to interpret it's value, depends on
+            the particular XML implementation. For example, XHTML supports the "id"
+            attribute - which is meant to have as a value a document-wide unique id, to be
+            used for styling or layout. Other types of XML documents might also declare
+            "id" attribute, but it might have a different meaning, and therefore no
+            assumptions should be made.
+        </p>
+
+    </body>
+
+</blog_post>        

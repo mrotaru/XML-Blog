@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>Using XSL to generate HTML</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>XSL</tag>
+            <tag>XSLT</tag>
+        </tags>
+    </head>
+
+    <body>
+
+        <p>
+            The Extensible Stylesheet Language Family (XSL) can be used to transform XML
+            documents into other types of XML documents ( such as XHTML ), or into
+            completely different formats - such as PDF, or simple plain text.
+        </p>
+        <p>
+            One of the most common applications of XSL is to present documents stored
+            inside XML files as XHTML, for consumption by browsers. The principle behind
+            XSL is simple: take a well-formed XML document, find the needed
+            elements/nodes/text ( using XPath ), and place them in a template. Assuming a
+            valid XSL template and a well-formed XML file were used, the resulting document
+            will also be a valid XHTML document.
+        </p>
+        <p>
+            Taking the document used in the previous blog post, which contains information
+            about a few movies, I will assume the goal is to generate the XHTML code which
+            will present the information inside the file.
+        </p>
+        <p>
+            To accomplish this, an XSL Style Sheet must be created. The name is slightly
+            misleading, because XSL can be used not only to configure and customize how an
+            XML document is presented, but transformations can be applied as well. This
+            will not, of course, alter the XML document, but might not represent all the
+            data inside it - some information can be filtered out, new information might be
+            added by the XSL template.
+        </p>
+        <p>
+            I have come up with the following XSL file:
+        </p>
+<code>
+01 &lt;?xml version="1.0"?&gt;
+02 &lt;xsl:stylesheet 
+03     version="1.0" 
+04     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" &gt;
+05     &lt;xsl:template match="/"&gt;
+06         &lt;!--XHTML generation begins here--&gt;
+07         &lt;html&gt;
+08             &lt;body&gt;
+09                 &lt;h2&gt;A list of movies&lt;/h2&gt;
+10                 &lt;p&gt;This list comprises several randomly selected movies&lt;/p&gt;
+11                 &lt;table&gt;
+12 
+13                     &lt;!--Generate table headings--&gt;
+14                     &lt;tr&gt;
+15                         &lt;th&gt;Title&lt;/th&gt;
+16                         &lt;th&gt;Year&lt;/th&gt;
+17                         &lt;th&gt;Rating&lt;/th&gt;
+18                     &lt;/tr&gt;
+19 
+20                     &lt;!--Generate table rows--&gt;
+21                     &lt;xsl:for-each select="movies/movie"&gt;
+22                         &lt;tr&gt;
+23                             &lt;td&gt;&lt;xsl:value-of select="title"/&gt;&lt;/td&gt;
+24                             &lt;td&gt;&lt;xsl:value-of select="year"/&gt;&lt;/td&gt;
+25                             &lt;td&gt;&lt;xsl:value-of select="rating"/&gt;&lt;/td&gt;
+26                         &lt;/tr&gt;
+27                     &lt;/xsl:for-each&gt;
+28                 &lt;/table&gt;
+29             &lt;/body&gt;
+30         &lt;/html&gt;
+31         &lt;!--XHTML generation finishes here--&gt;
+32     &lt;/xsl:template&gt;
+33 &lt;/xsl:stylesheet&gt;
+</code>
+
+        <p>
+            A few things to note: 
+        </p>
+
+        <p>
+            I intentionally omitted the price information, to underline how XSL
+            might create the wrong impression of the information contained in
+            the XML file. This information is available inside the XML, but the
+            XSLT omits it.
+        </p>
+        
+        <p>
+            XPath is used on L05, to define the elements to which the template
+            should be applied. In this case, the '/' means that it should be
+            applied to the whole document. Again, very similar to paths in Unix
+            - '/' represents the root of the filesystem.
+        </p>
+        
+        <p>
+            XPath is used again on L21; the statements contained by the
+            for-each element will be executed for each node matching the XPath
+            expression "movies/movie".
+        </p>
+        
+        <p>
+            Another important XSL element, the <var>xsl:value-of</var> is used
+            on lines 23-25; it relies on the concept of the "current element".
+            In the context of a <var>for-each</var>, this means that each
+            element matching <var>for-each</var>'s XPath ( in this case,
+            "movies/movie" ) will become the "current element", in sequence. We
+            have five movie elements in our XML file, so each of these will
+            become, in turn, the current element. <var>xsl:value-of</var> will
+            extract the value of certain child elements - <var>title</var>,
+            <var>year</var> and <var>rating</var>, and place these values
+            instead of itself.
+        </p>
+    
+        <p>
+            One more step is needed - we need to tell the XML file that we made an XSL stylesheet for it - otherwise, when opened in a browser, it will simply be displayed as before. To do this, a line needs to be added to the XML file:
+        </p>
+<code>
+2 &lt;?xml-stylesheet type="text/xsl" href="movies-style.xsl"?&gt;
+</code>
+
+        <p>
+            When opened in an XSL-compliant browser ( all modern browsers are compatible
+            with XSL ), the XML file will be processed using our XSL file (
+            movies-style.xsl ), and the result of this process is XHTML - which will then
+            be displayed by the browser.
+        </p>
+
+    </body>
+
+</blog_post>        

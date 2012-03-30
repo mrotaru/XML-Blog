@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>What is XML well-formedness and how could you measure it?</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Nov 2011</date>
+        <tags>
+            <tag>XML</tag>
+            <tag>well-formedness</tag>
+        </tags>
+    </head>
+
+    <body>
+
+        <p>
+            If an XML document is well-formed, it conforms to the syntax rules, as defined
+            in the XML standard. Unlike HTML, the XML standard is very strict, and does not
+            tolerate errors such as the omission of a closing tag, or having different
+            cases in the opening and closing tags; for example, the following is not a
+            well-formed XML document:
+        </p>
+
+<code>
+1 &lt;?xml version="1.0"?&gt;
+2 &lt;person&gt;
+3     &lt;name&gt;John Smith&lt;/Name&gt;
+4 &lt;/person&gt;
+</code>
+
+        <p>
+            Although the "name" tag was closed, the closing tag tag should have the same
+            casing as the opening tag, therefore this document is not a well-formed XML
+            file. The line should be: &lt;name&gt;John Smith&lt;/name&gt; to form a well-formed XML
+            document.
+        </p>
+
+        <p>
+            Well-formedness also implies <em>correct nesting</em>; for example, the following code
+            is not well-formed because the &lt;surname&gt; tag was opened before the &lt;name&gt; tag
+            was closed, therefore the two tags overlap - which is not allowed in XML.
+        </p>
+
+        Wrong: 
+
+<code>
+&lt;name&gt;John&lt;surname&gt;Smith&lt;/name&gt;&lt;/surname&gt;
+</code>
+
+        Correct:
+<code>
+&lt;name&gt;John&lt;/name&gt;&lt;surname&gt;Smith&lt;/surname&gt; 
+</code>
+
+        <p>
+            Another way in which documents can fail the well-formedness test is by not
+            having a single root tag; in other words, all of the tags inside the document
+            must reside inside a unique pair of opening and closing tags. But it doesn't
+            have to be the xml tag; it could be any tag ( with a valid name, of course ).
+        </p>
+
+        <p>
+            Well-formedness can be checked with special tools - for example, the w3scools
+            validator (http://www.w3schools.com/xml/xml_validator.asp); but due to the
+            strictness of the XML standard, the parser should abort at the first
+            encountered error. Therefore, the number of errors is rarely important; what
+            matters is whether the whole document is valid.
+        </p>
+
+    </body>
+
+</blog_post>        

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>Introduction</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>16 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            This report aims to provide an overview of the XML landscape - what technologies
+            are available, in what state of development and acceptance are they, and provide
+            examples of how they are used.
+        </p>
+
+        <p>
+            In the first part, a number of frequently asked questions about XML and related
+            technologies are answerd, providing the reader with a high-level overview of many
+            of the topics which will be covered in more detail later in the report. Basic
+            concepts relating to XML are discussed in this topic, such as well-formedness,
+            validation, namespaces, elements and attributes. Also included is a
+            high-level discussion about the semantic web.
+        </p>
+
+        <p>
+            The second part of the report discusses various technologies, some of which
+            vital to XML, such as XPath and XLink. Other technologies are based on XML,
+            such as XIML and XUL, while AJAX and the concept of the DOM are more loosly
+            related to XML. The W3C XML Schema is also described, explaining how the need
+            for such a technology emerged and how does W3C XML Schema fulfills its role.
+        </p>
+
+        <p>
+            In the third part, the topics of styling and transforming XML documents is
+            adressed. Technologies such as CSS and XSL are discussed, providing examples
+            of how they can be used to style XML documents, and for generating XHTML
+            documents.
+        </p>
+
+        <p>
+            More specific topics are explored in Part Four - such as Scalable Vector
+            Graphics, and how can XML be used to represent a logical data model. This
+            part also includes a section discussing the .docx format used by recent
+            versions of Microsoft Office, and how it relates to the older .doc format.
+            Another section is dedicated to a review of one of the most popular
+            XML IDEs, XML Spy, 
+        </p>
+
+        <p>
+            The fifth, and final part of this report explores some of the downsides of
+            XML, and some of the problems which could be encountered while authoring or
+            using XML documents. A case study of a badly written XML document is analyzed,
+            and also included in Part Five is a discussion of security in the context
+            of XML documents, along with a section on how encodings are used in XML.
+        </p>
+
+    </body>
+
+</blog_post>        

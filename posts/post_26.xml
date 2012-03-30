@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>What is the DOM ?</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+            <tag>DOM</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            The DOM is an interface which provides a way of accessing and modifying
+            structured documents, such as XML, XHTM and SVG. The DOM is usually accessed
+            via it's public API, in a platform- and operating system-independent manner.
+        </p>
+        <p>
+            The DOM has a troubled history, due to the fact that the early browsers market
+            was very competitive, which reflected negatively on the willingness of the
+            companies producing them to cooperate, develop and implement standards. W3C
+            later managed to get companies such as Netscape and Microsoft to collaborate
+            and develop a standard for a scripting language ( ECMAScript ), and a DOM
+            afterwards, in late 1998.
+        </p>
+        <p>
+            The concept of a DOM is used by browsers, which expose an API to enable
+            JavaScript code to access and modify the DOM. For example, the following code
+            will find an element which has the 'foo' id and make it's background colour
+            green:
+        </p>
+<code>document.getElementById('foo').backgroundColor="green";</code>
+        <p>
+            This example illustrates a few important concepts about the DOM - instead of
+            being a monolithic specification, it is divided into several separate
+            documents, each describing a specific area. For Level 2 DOM, it comprises a
+            'Core' ( http://www.w3.org/TR/2000/REC-DOM-Level-2-Core-20001113/ ), and the
+            other recommendations extend on it. For example, the Level 2 HTML DOM extends
+            some components which are part of the 'Core' specification, specializing them
+            according to the needs of HTML. The HTML DOM 'HTMLDocument' interface, for
+            example (
+            http://www.w3.org/TR/2003/REC-DOM-Level-2-HTML-20030109/html.html#ID-26809268 )
+            was derived from the core 'Document' interface, and similarly the HTMLElement
+            interface was derived from the core 'Element' interface.
+        </p>
+        <p>
+            Such extensions of the 'Core' DOM allow for a wider range of application, and
+            therefore more uses. The aforementioned HTML DOM allows for HTM-specific
+            manipulation - for example, hiding an element with a certain ID. The DOM Level
+            2 Style specification allows scripts to dynamically access and update the
+            content of stylesheets, therefore affecting how the document looks.
+        </p>
+
+    </body>
+
+</blog_post>        

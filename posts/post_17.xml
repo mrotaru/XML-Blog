@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>Logical data modelling in XML</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+            <tag>Data modelling</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            Logical data modeling usually occurs largely at a high level, outside the
+            constraints of particular technologies, such as XML or SQL. However, since the
+            resulting data model will ultimately be implemented in one ( or more ) of the
+            available technologies, the logical data model might be adjusted for the
+            particular computing system on which the physical data model is to be
+            implemented - in this case, XML.
+        </p>
+        <p>
+            A logical data model consists of three main components: entities, attributes,
+            and relationships
+            (http://web.archive.org/web/20080509063521/http://www.dbmsmag.com/9506d16.html
+            ). XML provides a robust platform for implementing entities and attributes, but
+            relationships can be more difficult to express (
+            http://www.tdan.com/view-articles/5538 ).
+        </p>
+        <p>
+            The hierarchical structure of XML can be used to convey basic relationships,
+            such as one-to-one and one-to-many; for example, a document called "Modules" can
+            contain one or more "Tutor" elements. This can be thought of as expressing
+            either an one-to-one relationship ( if the module only has one tutor ), or as
+            one-to-many, if the module contains multiple "Tutor" elements.
+        </p>
+
+    </body>
+
+</blog_post>        

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>What is wrong with XML?</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>13 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            It seems somewhat inappropriate to state that there is something wrong with
+            XML; it is, after all, just a technology designed for simple purposes: to
+            provide an extensible markup language, which could be used on it's own, or be
+            used to create other, specialized markup languages. The burgeoning scene of
+            XML-based languages is a testament to XML's success, and therefore it
+            fulfilled its purpose.
+        </p>
+        <p>
+            But that is not to say that XML doesn't come without drawbacks, though. One of
+            the most important issues with XML pertains to it's <em>verbosity </em> - XML files can
+            become quite large. This is inherent to XML, and is one of the trade-offs
+            consciously made by it's designers; integrity was deemed more important than
+            file size. This issue can be mitigated to some degree by using compression -
+            an XML file is, after all, just text so it lends itself to compression
+            algorithms.  However, this negates one of XML's advantages, since if the
+            archive is damaged it would hardly be possible to salvage any of the data.
+        </p>
+        <p>
+            Another issue consists of the relative <em>complexity</em> of an XML parser, as
+            compared to alternatives available under certain conditions. For example, XML
+            is often being used for storing configuration settings for applications. The
+            application then has to include an XML parser, which could significantly
+            increase the size of the application. This is less of an issue with large
+            applications, such as Visual Studio or Microsoft Office, but simpler means of
+            storing configuration files - such as .ini or .conf files - are available for
+            smaller applications.
+        </p>
+        <p>
+            XML files can also be <em>cumbersome to author</em> without a specialized editor, again
+            due to the explicit nature of XML. This not a concern when small changes need
+            to be made - for example, to change the resolution for a game in it's
+            config.xml. But authoring can be an extremely tedious process when large
+            chunks of XML need to be added, or when a document is created from scratch.
+            This problem is compounded by the fact that XML documents should be
+            well-formed, and in many cases valid; and small mistakes can render a document
+            unacceptable to parsers due to well-formedness or validity issues. This issue
+            can make XML documents 'read-only' for humans.
+        </p>
+    </body>
+
+</blog_post>        

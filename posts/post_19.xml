@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>What is XPath ?</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+            <tag>XPath</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            XPath is a syntax used for addressing certain parts of an XML document. It can
+            also be used to test whether a node matches a pattern ( the pattern being the
+            XPath ) - this property is used by XSLT.
+        </p>
+        <p>
+            It is difficult to point out strengths and weaknesses, since XPath is a
+            relatively simple technology, designed with a very specific purpose in mind.
+            Over the years since it was introduced, XPath has proven it's value, and is a
+            very important part of XML. The most common usage is in the context of XSLT, to
+            select nodes onto which to apply formatting. It is obvious that some mechanism
+            of selecting nodes is necessary in this context, not simply desirable; and
+            XPath is the natural consequence of this requirement. 
+        </p>
+
+        <p>
+            Assuming this well-formed XML document:
+        </p>
+
+<code>
+01 &lt;?xml version="1.0"?&gt;
+02 &lt;movies&gt;
+03     &lt;movie&gt;
+04         &lt;title&gt;Hunger&lt;/title&gt;
+05         &lt;rating&gt;7.6&lt;/rating&gt;
+06         &lt;price&gt;15.00&lt;/price&gt;
+07         &lt;year&gt;2008&lt;/year&gt;
+08     &lt;/movie&gt;
+09     &lt;movie&gt;
+10         &lt;title&gt;Year One&lt;/title&gt;
+11         &lt;rating&gt;5.0&lt;/rating&gt;
+12         &lt;price&gt;12.00&lt;/price&gt;
+13         &lt;year&gt;2011&lt;/year&gt;
+14     &lt;/movie&gt;
+15     &lt;movie&gt;
+16         &lt;title&gt;Pulp Fiction&lt;/title&gt;
+17         &lt;rating&gt;9.0&lt;/rating&gt;
+18         &lt;price&gt;10.00&lt;/price&gt;
+19         &lt;year&gt;1994&lt;/year&gt;
+20     &lt;/movie&gt;
+21     &lt;movie&gt;
+22         &lt;title&gt;The Godfather&lt;/title&gt;
+23         &lt;rating&gt;9.2&lt;/rating&gt;
+24         &lt;price&gt;15.00&lt;/price&gt;
+25         &lt;year&gt;1972&lt;/year&gt;
+26     &lt;/movie&gt;
+27     &lt;movie&gt;
+28         &lt;title&gt;Apocalypto&lt;/title&gt;
+29         &lt;rating&gt;7.8&lt;/rating&gt;
+30         &lt;price&gt;17.00&lt;/price&gt;
+31         &lt;year&gt;2006&lt;/year&gt;
+32     &lt;/movie&gt;
+33 &lt;/movies&gt;
+</code>
+
+        <p>
+            XPath can be used to select a particular element. For example, to view the
+            titles of all the movie elements, the following XPath expression can be used:
+        </p>
+
+<code>movies/movie/title</code>
+
+        <p>
+            To view only the tiles of movies released after year 2000:
+        </p>
+
+<code>/movies/movie[year > '2000']</code>
+
+        <p>
+            To view the first two movies:
+        </p>
+<code>/movies/movie[position() &lt; '3']</code>
+
+        <p>
+            Some of the inconveniences of XPath include the fact that it has it's own
+            syntax that one needs to learn; it's a language within a language. XPath
+            includes quite a number of functions ( http://www.w3.org/TR/xpath/#corelib ),
+            which means that proficiency is not easy to achieve, and can become very
+            difficult to read. Here's an example from the XPath specification:
+        </p>
+
+<code>/child::doc/child::chapter[position()=5]/child::section[position()=2]</code>
+
+        <p>
+            It selects the second section of the fifth chapter of the doc document element.
+        </p>
+
+        <p>
+            On the other hand, the syntax is purposefully designed to be similar to the way
+            file and folder paths are described on Unix systems, and having some
+            familiarity with the Unix command line can ease the process of becoming
+            comfortable with XPath. For example, the '.' has a conceptually similar
+            significance - in Unix, it signifies the current directory, while in XPath the
+            current element. In a similar vein, '..' can be used on the Unix command line
+            as a shortcut for the parent of the current folder, while in XPath it means the
+            parent of the current element. Hierarchy is described using the slash in both
+            cases.
+        </p>
+
+    </body>
+
+</blog_post>        

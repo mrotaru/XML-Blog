@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>How can an XML document be best presented?</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            An XML document can be presented by styling it with CSS, but XSLT ( Extensible
+            Stylesheet Language Transformation ) is preferred. XSLT is a language which
+            itself is XML, and can be used for a number of transformations of XML
+            documents.
+        </p>
+        <p>
+            One common application of XSLT is for transforming an XML document into HTML,
+            which will be presented to the user. The advantages of this approach are
+            obvious; it allows a straightforward way of presenting content, as opposed to
+            the more traditional way of storing data in a database, extracting it, and
+            generating HTML from it. Using XSLT represents a simpler solution, and
+            therefore less room for errors.
+        </p>
+        <p>
+            XSLT can also be used to target various displays, or can be used in combination
+            with XSL Formatting Objects to generate files in a variety of formats,
+            including PDF documents and PNG images. One of the main advantages of using
+            XSLT is that XSLT processors can be either client-side, or server-side.
+        </p>
+        <p>
+            The presentation of XML documents, transformed using XSLT is not limited to
+            websites; XSLT transformations are supported by Windows XP ( via MSXML3 ) and
+            the GNOME desktop environment for Linux. XSLT fully leverages the advantages
+            offered by being written in XML - it is a widely available and versatile
+            technology, that can be adapted to various purposes, and parsers are relatively
+            easy to write because of the numerous existing applications.
+        </p>
+    </body>
+
+</blog_post>        

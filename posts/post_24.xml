@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>What is XLink ?</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>1 Dec 2011</date>
+        <tags>
+            <tag>XML</tag>
+            <tag>XLink</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            XLink is the XML way of tackling the issue of creating links between documents.
+            It is very similar to it's HTML counterpart, the &lt;a&gt; tag. But having a
+            dedicated element for handling linking is not in XML's spirit ( it would impose
+            unnecessary restrictions that would hamper flexibility ), therefore this
+            functionality is implemented in a separate namespace (
+            xmlns:xlink=http://www.w3.org/1999/xlink ), and attributed to elements with by
+            setting certain properties.
+        </p>
+
+        <p>
+            It can be used for the roles fulfilled by &lt;a&gt; in HTML - to enable the user to
+            navigate to a different document; but they're more versatile, and have a number
+            of attributes that control it's behaviour.
+        </p>
+
+        <p>
+            An XLink can be of two types: simple and extended. The simple XLink has similar
+            similar capabilities to traditional HTML links: they provide a uni-directional
+            connection between two resources.
+        </p>
+
+        <p>
+            Example of simple XLink usage:
+        </p>
+
+<code>
+01 &lt;?xml version="1.0"?&gt;
+02 &lt;links xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
+03 
+04     &lt;blog xlink:type="simple"
+05         xlink:href="http://mihairotaru.blogspot.com"&gt;Ram's blog&lt;/blog&gt;
+06 
+07     &lt;blog xlink:type="simple"
+08         xlink:href="http://native-dev.blogspot.com"&gt;Second blog&lt;/blog&gt;
+09 
+10 &lt;/links&gt;
+</code>
+
+    </body>
+
+</blog_post>        
