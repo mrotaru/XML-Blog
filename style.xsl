@@ -11,8 +11,8 @@
             <script src="lib/jquery.dimensions.js" type="text/javascript"></script>
             <script src="lib/jquery.tooltip.pack.js" type="text/javascript"></script>
             <script src="script.js" type="text/javascript"></script>
-            <script>
-                window.onload=init(); 
+            <script type="text/javascript">
+                //window.onload=init(); 
             </script>
             <title>
                 <xsl:value-of select="$title"/>
@@ -86,6 +86,9 @@
                     <footer>
                     </footer>
                 </div>
+        <script type="text/javascript">
+            window.onload=init(); 
+        </script>
         </body>
     </html>
 
