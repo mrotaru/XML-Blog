@@ -6,12 +6,12 @@
 
 @font-face {
     font-family: "Graublau Web Regular";
-    src: local("Graublau Web Regular"), local("GraublauWeb-Regular"), url("type/GraublauWeb.woff") format("woff"), url("type/GraublauWeb.otf") format("opentype"), url("type/GraublauWeb.svg#GraublauWeb-Regular") format("svg");
+    src: local("Graublau Web Regular"), local("GraublauWeb-Regular"), url("type/GraublauWeb.otf") format("opentype"), url("type/GraublauWeb.woff") format("woff"), url("type/GraublauWeb.svg#GraublauWeb-Regular") format("svg");
 }
 
 @font-face {
     font-family: "Graublau Web Bold";
-    src: local("Graublau Web Bold"), local("GraublauWeb-Bold"), url("type/GraublauWebBold.woff") format("woff"), url("type/GraublauWebBold.otf") format("opentype"), url("type/GraublauWebBold.svg#GraublauWeb-Bold") format("svg");
+    src: local("Graublau Web Bold"), local("GraublauWeb-Bold"), url("type/GraublauWebBold.otf") format("opentype"), url("type/GraublauWebBold.woff") format("woff"), url("type/GraublauWebBold.svg#GraublauWeb-Bold") format("svg");
 }
 
 html
