@@ -43,13 +43,13 @@
             was closed, therefore the two tags overlap - which is not allowed in XML.
         </p>
 
-        Wrong: 
+        <p>Wrong:</p>
 
 <code>
 &lt;name&gt;John&lt;surname&gt;Smith&lt;/name&gt;&lt;/surname&gt;
 </code>
 
-        Correct:
+        <p>Correct:</p>
 <code>
 &lt;name&gt;John&lt;/name&gt;&lt;surname&gt;Smith&lt;/surname&gt; 
 </code>
