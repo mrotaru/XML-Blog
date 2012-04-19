@@ -5,18 +5,20 @@
     <xsl:variable name="title" select="document(/root/@posts)/posts/title"/>
     <html>
         <head>
+            <title>
+                <xsl:value-of select="$title"/>
+            </title>
             <link rel="stylesheet" href="style.css"/>
-            <script src="lib/jquery.js" type="text/javascript"></script>
+            <script src="lib/modernizr-2.5.3.js"></script>
+            <script src="lib/jquery-1.7.2.min.js" type="text/javascript"></script>
             <script src="lib/jquery.bgiframe.js" type="text/javascript"></script>
             <script src="lib/jquery.dimensions.js" type="text/javascript"></script>
             <script src="lib/jquery.tooltip.pack.js" type="text/javascript"></script>
+            <script src="lib/jquery.dump.js" type="text/javascript"></script>
             <script src="script.js" type="text/javascript"></script>
             <script type="text/javascript">
                 //window.onload=init(); 
             </script>
-            <title>
-                <xsl:value-of select="$title"/>
-            </title>
         </head>
         <body>
             <div id="container">
@@ -87,7 +89,7 @@
                     </footer>
                 </div>
         <script type="text/javascript">
-            window.onload=init(); 
+            window.onload=init; 
         </script>
         </body>
     </html>
