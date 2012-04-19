@@ -1,7 +1,7 @@
 @font-face
 {
     font-family: 'Yanone Kaffeesatz Regular';
-    src: local( 'Yanone Kaffeesatz Regular' ), url( 'fonts/YanoneKaffeesatz-Regular.ttf' ), format( 'truetype' );
+    src: local( 'Yanone Kaffeesatz Regular' ), url( 'type/YanoneKaffeesatz-Regular.ttf' ), format( 'truetype' );
 }
 
 @font-face {

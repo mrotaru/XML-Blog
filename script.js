@@ -1,4 +1,62 @@
 var xml_posts;
+var init_run=false;
+
+// from: http://www.szajkowski.com/ajaxsample.html
+function xmlhttpPost( strURL ) 
+{
+    var xmlHttpReq = false;
+    console.info("requesting: " + strURL );
+    
+    if( window.XMLHttpRequest ) // Mozilla/Safari 
+    {
+        xmlHttpReq = new XMLHttpRequest();
+        if( xmlHttpReq.overrideMimeType )
+        {
+            xmlHttpReq.overrideMimeType('text/xml');
+            // See note below about this line
+        }
+    
+    } 
+    else if( window.ActiveXObject ) // IE
+    {
+        try {
+            xmlHttpReq = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+            try {
+                xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (e) {}
+        }
+    }
+    
+    if( !xmlHttpReq )
+    {
+        alert('ERROR AJAX:( Cannot create an XMLHTTP instance');
+        return false;
+    }   
+
+    xmlHttpReq.open('GET', strURL, true);
+    xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');        
+    xmlHttpReq.onreadystatechange = function() { 
+        callBackFunction( xmlHttpReq ); 
+    };
+    xmlHttpReq.send("");
+}
+
+function callBackFunction( http_request ) 
+{
+    if (http_request.readyState == 4)
+    {
+        if (http_request.status == 200)
+        {
+            console.info("returning: " + http_request );
+            return http_request.responseXML;
+        } 
+        else 
+        {
+            alert('ERROR: AJAX request status = ' + http_request.status);
+        }
+    }
+}
 
 function loadXMLDoc(docname)
 {   
@@ -139,20 +197,47 @@ function load_blog_post( filename )
     }
 }
 
+function type(obj){
+    return Object.prototype.toString.call(obj).match(/^\[object (.*)\]$/)[1]
+}
+
+function eval_xpath( xml_fragment, xpath_expression, result_type )
+{
+    if( window.XMLHttpRequest ) 
+    {
+        xml_fragment.setProperty("SelectionNamespaces",    "xmlns:xsl='http://www.w3.org/1999/XSL/Transform'");
+        xml_fragment.setProperty("SelectionLanguage", "XPath");
+        console.info( "evaluating: " + xpath_expression );
+        var nodes = xml_fragment.documentElement.selectNodes( xpath_expression );
+        console.info( nodes.length );
+        return nodes;
+    }
+    else // IE
+    {
+        result_type = ( typeof result_type == "undefined" ) ? XPathResult.STRING_TYPE : XPathResult.ANY_TYPE;
+    }
+}
+
 function get_tooltip_html( filename )
 {
     console.info("loading: " + filename );
     // load xml file
     xml_meta=loadXMLDoc( filename );
 
-    // extract info
-    var author_name = xml_meta.evaluate( "head/author/name", xml_meta, null, XPathResult.STRING_TYPE, null );
-    var author_surname = xml_meta.evaluate( "head/author/surname", xml_meta, null, XPathResult.STRING_TYPE, null );
-    var author = author_name.stringValue + " " + author_surname.stringValue.charAt(0) + ".";
-    var date = xml_meta.evaluate( "head/date", xml_meta, null, XPathResult.STRING_TYPE, null );
-    var tags = xml_meta.evaluate( "head/tags", xml_meta, null, XPathResult.ANY_TYPE, null );
-
-    return "<p>Author: " + author + "</p>" + "<p>Date: " + date.stringValue + "</p>";
+    if( window.XMLHttpRequest )
+    {
+        // extract info
+        var author_name = xml_meta.evaluate( "head/author/name", xml_meta, null, XPathResult.STRING_TYPE, null );
+        var author_surname = xml_meta.evaluate( "head/author/surname", xml_meta, null, XPathResult.STRING_TYPE, null );
+        var author = author_name.stringValue + " " + author_surname.stringValue.charAt(0) + ".";
+        var date = xml_meta.evaluate( "head/date", xml_meta, null, XPathResult.STRING_TYPE, null );
+        var tags = xml_meta.evaluate( "head/tags", xml_meta, null, XPathResult.ANY_TYPE, null );
+        return "<p>Author: " + author + "</p>" + "<p>Date: " + date.stringValue + "</p>";
+    }
+    else // IE
+    {
+        eval_xpath( xml_meta, "head/author/name" );
+    }
 }
 
 function generate_tooltips()
@@ -190,6 +275,11 @@ function generate_tooltips()
 
 function init()
 {
-    xml_posts=loadXMLDoc("posts_with_titles.xml");
-    generate_tooltips();
+    if(!init_run)
+    {
+        xml_posts=loadXMLDoc("posts_with_titles.xml");
+        console.info( "posts: " + xml_posts );
+        generate_tooltips();
+        init_run=true;
+    }
 }

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog_post>
+    <head>
+        <title>Introduction</title>
+        <author>
+            <name>Mihai</name>
+            <surname>Rotaru</surname>
+        </author>
+        <date>19 Apr 2012</date>
+        <tags>
+            <tag>XML</tag>
+        </tags>
+    </head>
+
+    <body>
+        <p>
+            This projects aims to use XML technologies in combination with a
+            modern build system to build a blogging framework. Blog posts are xml files,
+            stored inside the <var>posts</var> folder, and having names of the
+            form <var>post_XX.xml</var>, where <var>XX</var> represents a
+            double-digit number. Each blog post that the user desires to appear in the
+            built website must be included in the <var>posts.xml</var> file, as a
+            <var>post</var> element of the <var>posts</var> root, as such:
+        </p>
+
+<code> &lt;post filename="posts/post_38.xml" title="Introduction"/&gt;</code>
+
+        <p>
+            After the post was added to the <var>posts.xml</var> file, the build system
+            (waf: <a href="http://code.google.com/p/waf/">http://code.google.com/p/waf/</a>) should be run: 
+        </p>
+
+<code>python waf</code>
+            
+        <p>
+            For each blog post, <var>waf</var> will generate the pdf version, and a small
+            xml file named <var>post_XX_meta.xml</var>, which contains meta-information about the
+            post - such as the author, and the date when it was published. These meta files
+            are dynamically fetched, using Ajax, when the user hovers the mouse over the title
+            of a blog post, for generating a tooltip with this information. 
+        </p>
+
+        <p>
+            When the user clicks the title of a blog post, the corresponding 
+            <var>post_XX.xml</var> file will be fetched (also using Ajax), transformed using
+            <var>transform.xsl</var> into xhtml, and the resulting xhtml will be set as the inner html for the
+            element with an <var>id</var> of <var>content</var>.  A link to the pdf
+            version of the article is automatically added to the footer of the article.
+        </p>
+
+        <p>
+            The build system will automatically detect when any of the blog posts in the
+            <var>posts</var> folder is changed, and will re-generate the corresponding
+            meta and pdf files.
+        </p>
+
+    </body>
+
+</blog_post>        

@@ -118,7 +118,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     </xsl:when>
 
                     <!--  list -->
-                    <xsl:when test="name() = 'ul'">
+                    <xsl:when test="name() = 'ul' or name() = 'a'">
                         <xsl:copy-of select="." />
                     </xsl:when>
                     
