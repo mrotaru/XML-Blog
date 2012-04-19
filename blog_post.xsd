@@ -2,34 +2,47 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="blog_post">
         <xs:complexType>
-            <xs:element ref="head" minOccurs="1" maxOccurs="1" />
-            <xs:element ref="body" minOccurs="1" maxOccurs="1" />
+            <xs:sequence>
+                <xs:element ref="head" minOccurs="1" maxOccurs="1" />
+                <xs:element ref="body" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-
     <xs:element name="head" >
         <xs:complexType>
-            <xs:element name="title" type="xs:string" maxOccurs="1" /> 
-            <xs:element ref="author" maxOccurs="1" /> 
-            <xs:element name="date"  type="xs:string" /> 
+            <xs:sequence>
+                <xs:element name="title" type="xs:string" maxOccurs="1" /> 
+                <xs:element ref="author" maxOccurs="1" /> 
+                <xs:element name="date"  type="xs:string" /> 
+                <xs:element name="tags"> 
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="tag" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
         </xs:complexType>
     </xs:element>
 
     <xs:element name="author" >
         <xs:complexType>
-            <xs:element name="name" type="xs:string" maxOccurs="1" /> 
-            <xs:element name="surname" type="xs:string" maxOccurs="1" /> 
+            <xs:sequence>
+                <xs:element name="name" type="xs:string" maxOccurs="1" /> 
+                <xs:element name="surname" type="xs:string" maxOccurs="1" /> 
+            </xs:sequence>
         </xs:complexType>
     </xs:element>
 
     <xs:element name="body" >
         <xs:complexType>
-            <xs:sequence>
-                <xs:element ref="folder" maxOccurs="unbounded" minOccurs="0" />
-                <xs:element ref="bookmark" maxOccurs="unbounded" minOccurs="0" />
-            </xs:sequence>
-            <xs:attribute name="name" type="xs:string" use="required"/>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="p" maxOccurs="unbounded" minOccurs="0" />
+                <xs:element name="code" maxOccurs="unbounded" minOccurs="0" />
+                <xs:element name="img" maxOccurs="unbounded" minOccurs="0" />
+                <xs:element name="ul" maxOccurs="unbounded" minOccurs="0" />
+            </xs:choice>
         </xs:complexType>
     </xs:element>
 
