@@ -164,6 +164,7 @@ function get_post_footer( post_number )
 
 function load_blog_post( filename )
 {
+    console.info("loading doc");
     var posts_folder = "posts";
     var number_match = filename.match( /(^.+_)(\d+)(\.xml)/i );
     var number = ( number_match[2] == '08' ? 8 : number_match[2] );
@@ -182,7 +183,7 @@ function load_blog_post( filename )
     if( window.ActiveXObject )
     {
         ex = xml.transformNode( xsl );
-        $("#content").html = ex;
+        $("#content").html( ex );
         $("#content").append( get_post_footer( post_number ));
     }
     // code for Mozilla, Firefox, Opera, etc.

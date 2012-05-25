@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blog_post>
     <head>
-        <title>Introduction</title>
+        <title>Report</title>
         <author>
             <name>Mihai</name>
             <surname>Rotaru</surname>
@@ -52,6 +52,22 @@
             The build system will automatically detect when any of the blog posts in the
             <var>posts</var> folder is changed, and will re-generate the corresponding
             meta and pdf files.
+        </p>
+
+        <p>
+            At the moment, the blog does not work in Internet Explorer, but was tested in Firefox 11
+            and Chrome 18.
+        </p>
+
+        <img src="img/screenshot-small.jpg"/>
+
+        <p>
+            A screenshot of the blog, which is about XML, with the post about namespaces loaded.
+        </p>
+
+        <p>
+            The blog can be seen "live" at: 
+            <a href="http://mihai-rotaru.github.com/XML-Blog">http://mihai-rotaru.github.com/XML-Blog</a>
         </p>
 
     </body>
