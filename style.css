@@ -121,8 +121,8 @@ nav li a:hover
 
 .current
 {
-    background-color: #8C594E !important;
     background: url("bg/bullet.png") no-repeat top left;
+    background-color: #8C594E !important;
     padding-left: 1.3em;
     color: white !important;
     list-style-type: circle !important;
