@@ -2,6 +2,7 @@ var xml_posts;
 var init_run=false;
 
 // from: http://www.szajkowski.com/ajaxsample.html
+// -----------------------------------------------------------------------------
 function xmlhttpPost( strURL ) 
 {
     var xmlHttpReq = false;
@@ -20,17 +21,17 @@ function xmlhttpPost( strURL )
     else if( window.ActiveXObject ) // IE
     {
         try {
-            xmlHttpReq = new ActiveXObject("Msxml2.XMLHTTP");
-        } catch (e) {
+            xmlHttpReq = new ActiveXObject( "Msxml2.XMLHTTP" );
+        } catch ( e ) {
             try {
-                xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
-            } catch (e) {}
+                xmlHttpReq = new ActiveXObject( "Microsoft.XMLHTTP" );
+            } catch ( e ) {}
         }
     }
     
-    if( !xmlHttpReq )
+    if(  !xmlHttpReq  )
     {
-        alert('ERROR AJAX:( Cannot create an XMLHTTP instance');
+        alert( 'ERROR AJAX:(  Cannot create an XMLHTTP instance' );
         return false;
     }   
 
@@ -42,6 +43,31 @@ function xmlhttpPost( strURL )
     xmlHttpReq.send("");
 }
 
+// test which version of MSXML2.Document is available
+// NOTE: IE only !
+// from: Professional Javascript for Web Developers 3rd ed, p. 645
+// -----------------------------------------------------------------------------
+function createDocument()
+{
+    if (typeof arguments.callee.activeXString != "string")
+    {
+        var versions = ["MSXML2.DOMDocument.6.0", "MSXML2.DOMDocument.3.0", "MSXML2.DOMDocument"],
+        i, len;
+        for (i=0,len=versions.length; i < len; i++ )
+        {
+            try {
+                new ActiveXObject(versions[i]);
+                arguments.callee.activeXString = versions[i];
+                break;
+            } catch ( ex ) {
+                //skip
+            }
+        }
+    }
+    return new ActiveXObject(arguments.callee.activeXString);
+}
+
+// -----------------------------------------------------------------------------
 function callBackFunction( http_request ) 
 {
     if (http_request.readyState == 4)
@@ -58,6 +84,7 @@ function callBackFunction( http_request )
     }
 }
 
+// -----------------------------------------------------------------------------
 function loadXMLDoc(docname)
 {   
     if (window.XMLHttpRequest)
@@ -70,6 +97,7 @@ function loadXMLDoc(docname)
     return xhttp.responseXML;
 }
 
+// -----------------------------------------------------------------------------
 function loadXMLString(txt)
 {
     if (window.DOMParser)
@@ -89,6 +117,7 @@ function loadXMLString(txt)
 
 // returns all methods supported by obj
 // from: http://stackoverflow.com/questions/152483/is-there-a-way-to-print-all-methods-of-an-object-in-javascript 
+// -----------------------------------------------------------------------------
 function getMethods(obj) {
     var result = [];
     for( var id in obj ) {
@@ -130,6 +159,7 @@ function get_nextsibling( node )
 }
 
 // check if the first node is an element node
+// -----------------------------------------------------------------------------
 function get_firstchild( node )
 {
     x = node.firstChild;
@@ -141,6 +171,7 @@ function get_firstchild( node )
 }
 
 // from: http://stackoverflow.com/a/1267338/447661
+// -----------------------------------------------------------------------------
 function zeroFill( number, width )
 {
   width -= number.toString().length;
@@ -153,6 +184,7 @@ function zeroFill( number, width )
 
 // return a div for a blog post which contains items such as a
 // link do download the pdf
+// -----------------------------------------------------------------------------
 function get_post_footer( post_number )
 {
     var pdf_folder = "build/pdf";
@@ -162,9 +194,11 @@ function get_post_footer( post_number )
     return ret_html;
 }
 
+// -----------------------------------------------------------------------------
 function load_blog_post( filename )
 {
     console.info("loading doc");
+//    alert("loading doc");
     var posts_folder = "posts";
     var number_match = filename.match( /(^.+_)(\d+)(\.xml)/i );
     var number = ( number_match[2] == '08' ? 8 : number_match[2] );
@@ -198,14 +232,21 @@ function load_blog_post( filename )
     }
 }
 
+// -----------------------------------------------------------------------------
 function type(obj){
     return Object.prototype.toString.call(obj).match(/^\[object (.*)\]$/)[1]
 }
 
+// -----------------------------------------------------------------------------
 function eval_xpath( xml_fragment, xpath_expression, result_type )
 {
-    if( window.XMLHttpRequest ) 
+    if( window.ActiveXObject ) // IE
     {
+        return null;
+    }
+    else // IE
+    {
+        result_type = ( typeof result_type == "undefined" ) ? XPathResult.STRING_TYPE : XPathResult.ANY_TYPE;
         xml_fragment.setProperty("SelectionNamespaces",    "xmlns:xsl='http://www.w3.org/1999/XSL/Transform'");
         xml_fragment.setProperty("SelectionLanguage", "XPath");
         console.info( "evaluating: " + xpath_expression );
@@ -213,19 +254,69 @@ function eval_xpath( xml_fragment, xpath_expression, result_type )
         console.info( nodes.length );
         return nodes;
     }
-    else // IE
+}
+
+// p. 658
+// -----------------------------------------------------------------------------
+function selectSingleNode( context, expression, namespaces )
+{
+    var doc = ( context.nodeType != 9 ? context.ownerDocument : context );
+
+    if ( typeof doc.evaluate != "undefined" )
+    { // ------------------------------------ FF
+        var nsresolver = null;
+        if ( namespaces instanceof Object )
+        {
+            nsresolver = function( prefix ) 
+            {
+                return namespaces[ prefix ];
+            };
+        }
+        var result = doc.evaluate( expression, context, nsresolver,
+                XPathResult.FIRST_ORDERED_NODE_TYPE, null );
+        return ( result !== null ? result.singleNodeValue : null );
+
+    } 
+    else if ( typeof context.selectSingleNode != "undefined" )
+    { // ----------------------------------------------------- IE
+        //create namespace string
+        if ( namespaces instanceof Object )
+        {
+            var ns = "";
+            for ( var prefix in namespaces )
+            {
+                if ( namespaces.hasOwnProperty( prefix ))
+                {
+                    ns += "xmlns:" + prefix + "='" + namespaces[prefix] + "' ";
+                }
+            }
+            doc.setProperty( "SelectionNamespaces", ns );
+        }
+        return context.selectSingleNode( expression );
+    } 
+    else 
     {
-        result_type = ( typeof result_type == "undefined" ) ? XPathResult.STRING_TYPE : XPathResult.ANY_TYPE;
+        throw new Error( "No XPath engine found." );
     }
 }
 
+// -----------------------------------------------------------------------------
 function get_tooltip_html( filename )
 {
     console.info("loading: " + filename );
     // load xml file
     xml_meta=loadXMLDoc( filename );
 
-    if( window.XMLHttpRequest )
+    if( window.ActiveXObject ) // IE
+    {
+        var author_name = selectSingleNode( xml_meta, "head/author/name" ).text;
+        var author_surname = selectSingleNode( xml_meta, "head/author/surname" ).text;
+        var author = author_name + " " + author_surname.charAt(0) + ".";
+        var date = selectSingleNode( xml_meta, "head/date" ).text;
+        var tags = selectSingleNode( xml_meta, "head/tags" ).text;
+        return "<p>Author: " + author + "</p>" + "<p>Date: " + date + "</p>";
+    }
+    else
     {
         // extract info
         var author_name = xml_meta.evaluate( "head/author/name", xml_meta, null, XPathResult.STRING_TYPE, null );
@@ -235,12 +326,9 @@ function get_tooltip_html( filename )
         var tags = xml_meta.evaluate( "head/tags", xml_meta, null, XPathResult.ANY_TYPE, null );
         return "<p>Author: " + author + "</p>" + "<p>Date: " + date.stringValue + "</p>";
     }
-    else // IE
-    {
-        eval_xpath( xml_meta, "head/author/name" );
-    }
 }
 
+// -----------------------------------------------------------------------------
 function generate_tooltips()
 {
     var meta_folder = "build/meta";
@@ -274,6 +362,7 @@ function generate_tooltips()
     });
 }
 
+// -----------------------------------------------------------------------------
 function init()
 {
     if(!init_run)
