@@ -141,6 +141,7 @@ nav li a:hover
 
 .download_pdf
 {
+    height: 50px;
     padding: 10px;
     color: #191724;
     padding-left: 60px;
