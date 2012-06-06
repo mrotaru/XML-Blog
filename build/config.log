@@ -1,14 +1,14 @@
-# project  configured on Thu Apr 19 16:21:46 2012 by
+# project  configured on Wed Jun 06 20:28:09 2012 by
 # waf 1.6.11 (abi 98, python 20600f0 on win32)
-# using ./waf configure
+# using waf configure
 #
 ----------------------------------------
 Setting top to
-e:\pdev\xampp\htdocs\xml-blog
+e:\Downloads\new
 ----------------------------------------
 Setting out to
-e:\pdev\xampp\htdocs\xml-blog\build
+e:\Downloads\new\build
 ----------------------------------------
 Checking for program xsltproc
 c:\pdev\bin\xsltproc.exe
-find program=['xsltproc'] paths=['C:\\pdev\\MinGW\\msys\\1.0\\home\\Administrator\\bin', '.', 'C:\\pdev\\MinGW\\msys\\1.0\\local\\bin', 'C:\\pdev\\MinGW\\bin', 'C:\\pdev\\MinGW\\msys\\1.0\\bin', 'c:\\WINDOWS\\system32', 'c:\\WINDOWS', 'c:\\WINDOWS\\System32\\Wbem', 'c:\\Python26', 'C:\\pdev\\MinGW\\bin', 'C:\\pdev\\MinGW\\msys\\1.0\\bin', 'c:\\pdev\\boost_1_49_0\\boost-build-engine\\bin', 'c:\\pdev\\bin', 'c:\\pdev\\git\\bin', 'c:\\pdev\\tools\\fop-1.0', 'c:\\OpenSSL-Win32\\bin', 'e:\\pdev\\xampp\\mysql\\bin'] var='XSLTPROC' -> 'c:\\pdev\\bin\\xsltproc.exe'
+find program=['xsltproc'] paths=['C:\\pdev\\MinGW\\msys\\1.0\\home\\Administrator\\bin', '.', 'C:\\pdev\\MinGW\\msys\\1.0\\local\\bin', 'C:\\pdev\\MinGW\\bin', 'C:\\pdev\\MinGW\\msys\\1.0\\bin', 'c:\\WINDOWS\\system32', 'c:\\WINDOWS', 'c:\\WINDOWS\\System32\\Wbem', 'c:\\Python26', 'c:\\Python26\\Scripts', 'C:\\pdev\\MinGW\\bin', 'C:\\pdev\\MinGW\\msys\\1.0\\bin', 'c:\\pdev\\boost_1_49_0\\boost-build-engine\\bin', 'c:\\pdev\\bin', 'c:\\pdev\\git\\bin', 'c:\\pdev\\tools\\fop-1.0', 'c:\\pdev\\tools\\curl', 'c:\\OpenSSL-Win32\\bin', 'e:\\pdev\\xampp\\mysql\\bin', 'c:\\pdev\\tools\\xmlstarlet-1.3.1', 'c:\\pdev\\tools\\asciidoc', 'e:\\pdev\\ffmpeg\\bin\\', 'e:\\projekts\\downloaded\\node\\Release'] var='XSLTPROC' -> 'c:\\pdev\\bin\\xsltproc.exe'
